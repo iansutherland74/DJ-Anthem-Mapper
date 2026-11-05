@@ -35,9 +35,10 @@ enum AnthemCandidateEvidenceAnalyser {
         let trackMean = AnthemAnalysisMeasurements.weightedEnergy(in: trackRange, frames: valid)?.weightedMean ?? 0
         let candidateMean = candidateMeasurement.weightedMean
         let peak = inside.map(\.energy).max() ?? 0
-        let relative = clamp(candidateMean - trackMean + 0.5)
+        let relative = clamp(candidateMean - trackMean)
         let spread = AnthemAnalysisMeasurements.weightedDeviation(in: candidateRange, frames: valid, mean: candidateMean)
-        let consistency = clamp(1 - spread)
+        let stability = clamp(1 - spread)
+        let consistency = clamp(stability * candidateMean)
         let window = candidate.duration
         let preRange = AnthemAnalysisTimeRange(startTime: max(0, candidate.startTime - window), endTime: candidate.startTime)
         let postRange = AnthemAnalysisTimeRange(startTime: candidate.endTime, endTime: min(trackEnd, candidate.endTime + window))
@@ -50,7 +51,7 @@ enum AnthemCandidateEvidenceAnalyser {
             let totalDuration = surroundingParts.reduce(0.0) { $0 + $1.coveredDuration }
             surroundingMean = totalDuration > 0 ? Float(surroundingParts.reduce(0.0) { $0 + Double($1.weightedMean) * $1.coveredDuration } / totalDuration) : trackMean
         }
-        let contrast = clamp(candidateMean - surroundingMean + 0.5)
+        let contrast = clamp(candidateMean - surroundingMean)
         let score = clamp(candidateMean * 0.30 + peak * 0.15 + relative * 0.20 + consistency * 0.15 + contrast * 0.20)
         let confidence: AnthemCandidateConfidence = score >= 0.75 ? .high : (score >= 0.50 ? .medium : .low)
         return AnthemCandidateEvidence(candidate: candidate, meanEnergy: candidateMean, peakEnergy: peak, relativeEnergy: relative, consistency: consistency, surroundingContrast: contrast, score: score, confidence: confidence)
@@ -58,10 +59,6 @@ enum AnthemCandidateEvidenceAnalyser {
 
     private static func overlaps(_ frame: AnthemAnalysisFrame, start: Double, end: Double) -> Bool {
         frame.startTime < end && frame.startTime + frame.duration > start
-    }
-    private static func mean(_ values: [Float]) -> Float {
-        guard !values.isEmpty else { return 0 }
-        return values.reduce(0, +) / Float(values.count)
     }
     private static func clamp(_ value: Float) -> Float { min(1, max(0, value)) }
 }

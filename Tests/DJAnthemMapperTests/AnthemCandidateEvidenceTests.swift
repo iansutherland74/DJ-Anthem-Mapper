@@ -12,14 +12,14 @@ final class AnthemCandidateEvidenceTests: XCTestCase {
         XCTAssertNotNil(result)
         XCTAssertEqual(result?.meanEnergy ?? 0, 0.95, accuracy: 0.0001)
         XCTAssertEqual(result?.peakEnergy ?? 0, 1.0, accuracy: 0.0001)
-        XCTAssertGreaterThan(result?.surroundingContrast ?? 0, 0.9)
+        XCTAssertGreaterThan(result?.surroundingContrast ?? 0, 0.8)
         XCTAssertGreaterThanOrEqual(result?.confidence ?? .low, .medium)
     }
 
-    func testUniformlyLoudTrackHasWeakContrast() {
+    func testUniformlyLoudTrackHasNoPositiveContrast() {
         let frames = AnthemAnalysisFoundation.frames(from: [0.9, 0.9, 0.9, 0.9], trackDuration: 40)
         let result = AnthemCandidateEvidenceAnalyser.analyse(candidate: candidate(10, 30), frames: frames)
-        XCTAssertEqual(result?.surroundingContrast ?? -1, 0.5, accuracy: 0.0001)
+        XCTAssertEqual(result?.surroundingContrast ?? -1, 0, accuracy: 0.0001)
     }
 
     func testSilenceProducesBoundedEvidence() {
@@ -66,5 +66,59 @@ extension AnthemCandidateEvidenceTests {
         let c = AnthemCandidate(startTime: 0, endTime: 4, score: 0.25)
         let result = AnthemCandidateEvidenceAnalyser.analyse(candidate: c, frames: frames)
         XCTAssertEqual(result?.meanEnergy ?? -1, 0.25, accuracy: 0.0001)
+    }
+}
+
+extension AnthemCandidateEvidenceTests {
+    func testEqualTrackMeanHasNoPositiveRelativeEnergy() {
+        let frames = AnthemAnalysisFoundation.frames(from: [0.5,0.5,0.5,0.5], trackDuration: 40)
+        let result = AnthemCandidateEvidenceAnalyser.analyse(candidate: candidate(10,30), frames: frames)
+        XCTAssertEqual(result?.relativeEnergy ?? -1, 0, accuracy: 0.0001)
+    }
+
+    func testBelowTrackMeanHasNoPositiveRelativeEnergy() {
+        let frames = AnthemAnalysisFoundation.frames(from: [1.0,0.2,0.2,1.0], trackDuration: 40)
+        let result = AnthemCandidateEvidenceAnalyser.analyse(candidate: candidate(10,30), frames: frames)
+        XCTAssertEqual(result?.relativeEnergy ?? -1, 0, accuracy: 0.0001)
+    }
+
+    func testAboveTrackMeanHasPositiveRelativeEnergy() {
+        let frames = AnthemAnalysisFoundation.frames(from: [0.1,0.9,0.9,0.1], trackDuration: 40)
+        let result = AnthemCandidateEvidenceAnalyser.analyse(candidate: candidate(10,30), frames: frames)
+        XCTAssertGreaterThan(result?.relativeEnergy ?? 0, 0)
+    }
+
+    func testBelowSurroundingsHasNoPositiveContrast() {
+        let frames = AnthemAnalysisFoundation.frames(from: [0.9,0.2,0.2,0.9], trackDuration: 40)
+        let result = AnthemCandidateEvidenceAnalyser.analyse(candidate: candidate(10,30), frames: frames)
+        XCTAssertEqual(result?.surroundingContrast ?? -1, 0, accuracy: 0.0001)
+    }
+
+    func testAboveSurroundingsHasPositiveContrast() {
+        let frames = AnthemAnalysisFoundation.frames(from: [0.1,0.9,0.9,0.1], trackDuration: 40)
+        let result = AnthemCandidateEvidenceAnalyser.analyse(candidate: candidate(10,30), frames: frames)
+        XCTAssertGreaterThan(result?.surroundingContrast ?? 0, 0)
+    }
+
+    func testEnergeticFlatMaterialHasStrongerConsistencyThanWeakFlatMaterial() {
+        let strong = AnthemAnalysisFoundation.frames(from: [0.8,0.8,0.8,0.8], trackDuration: 40)
+        let weak = AnthemAnalysisFoundation.frames(from: [0.1,0.1,0.1,0.1], trackDuration: 40)
+        let c = candidate(10,30)
+        let strongResult = AnthemCandidateEvidenceAnalyser.analyse(candidate: c, frames: strong)
+        let weakResult = AnthemCandidateEvidenceAnalyser.analyse(candidate: c, frames: weak)
+        XCTAssertGreaterThan(strongResult?.consistency ?? 0, weakResult?.consistency ?? 1)
+    }
+
+    func testSilenceCannotObtainStrongConsistency() {
+        let frames = AnthemAnalysisFoundation.frames(from: [0,0,0], trackDuration: 30)
+        let result = AnthemCandidateEvidenceAnalyser.analyse(candidate: candidate(0,10), frames: frames)
+        XCTAssertEqual(result?.consistency ?? -1, 0, accuracy: 0.0001)
+    }
+
+    func testAllEvidenceComponentsRemainBounded() {
+        let frames = AnthemAnalysisFoundation.frames(from: [0,1,0.2,0.9], trackDuration: 40)
+        let result = AnthemCandidateEvidenceAnalyser.analyse(candidate: candidate(10,30), frames: frames)!
+        let values = [result.meanEnergy,result.peakEnergy,result.relativeEnergy,result.consistency,result.surroundingContrast,result.score]
+        XCTAssertTrue(values.allSatisfy { $0.isFinite && (0...1).contains($0) })
     }
 }
