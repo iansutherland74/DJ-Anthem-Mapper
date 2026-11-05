@@ -98,6 +98,8 @@ struct ImportWorkspace: View {
     @State private var isLifecycleSaveActionInProgress = false
     // M3_03H_OPEN_ANTHEM_MAP_UI_INTEGRATION
     @StateObject private var openCoordinator = AnthemMapOpenCoordinator()
+    @StateObject private var transactionalImportCoordinator =
+        TransactionalMediaImportCoordinator()
     @State private var openStatusMessage: String?
     private let savePanelPresenter = AnthemMapSavePanelPresenter()
     private let saveExecutor = AnthemMapSaveExecutor()
@@ -117,7 +119,6 @@ struct ImportWorkspace: View {
     @State private var waveformIsLoading = false
     @State private var waveformError: String?
     @State private var waveformGeneration = 0
-    private let importer = FFprobeMediaImporter()
 
     init(
         media: Binding<MediaDescription?>,
@@ -525,29 +526,42 @@ struct ImportWorkspace: View {
     }
 
     private func startImport(_ url: URL) {
-        playback.reset()
-        waveformGeneration += 1
-        waveformSamples = []
-        waveformIsLoading = false
-        waveformError = nil
-        preparedMKVStreamID = nil
-        pendingMKVRestoreTime = nil
-        resumeMKVAfterSwitch = false
         isImporting = true
         importError = nil
-        media = nil
-        selectedAudioStreamID = nil
-        importer.inspect(url: url) { result in
+
+        transactionalImportCoordinator.begin(url: url) { outcome in
             isImporting = false
-            switch result {
-            case .success(let description):
+
+            switch outcome {
+            case .succeeded(let description):
+                playback.reset()
+                waveformGeneration += 1
+                waveformSamples = []
+                waveformIsLoading = false
+                waveformError = nil
+                preparedMKVStreamID = nil
+                pendingMKVRestoreTime = nil
+                resumeMKVAfterSwitch = false
+                selectedAudioStreamID = nil
+
                 anthemRegion.resetForNewTrack()
                 anthemMapSession = nil
                 media = description
-                selectedAudioStreamID = description.defaultAudioStream?.id
-                preparePlayback(for: description, streamID: selectedAudioStreamID)
-                generateWaveform(for: description, streamID: selectedAudioStreamID)
-            case .failure(let error): importError = error.localizedDescription
+                selectedAudioStreamID =
+                    description.defaultAudioStream?.id
+
+                preparePlayback(
+                    for: description,
+                    streamID: selectedAudioStreamID
+                )
+
+                generateWaveform(
+                    for: description,
+                    streamID: selectedAudioStreamID
+                )
+
+            case .failed(let error):
+                importError = error.localizedDescription
             }
         }
     }
