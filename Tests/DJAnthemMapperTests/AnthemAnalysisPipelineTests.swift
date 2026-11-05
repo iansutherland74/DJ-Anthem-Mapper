@@ -40,10 +40,10 @@ final class AnthemAnalysisPipelineTests: XCTestCase {
         XCTAssertEqual(AnthemAnalysisPipeline.analyse(waveformSamples: [1], trackDuration: 1, configuration: config).status, .invalidInput)
     }
 
-    func testSilentWaveformIsValidAnalysis() {
+    func testSilentWaveformReturnsNoCandidates() {
         let result = AnthemAnalysisPipeline.analyse(waveformSamples: [0, 0, 0], trackDuration: 30)
-        XCTAssertEqual(result.status, .analysed)
-        XCTAssertFalse(result.candidates.isEmpty)
+        XCTAssertEqual(result.status, .noCandidates)
+        XCTAssertTrue(result.candidates.isEmpty)
     }
 
     func testRepeatedAnalysisIsDeterministic() {
@@ -69,5 +69,13 @@ final class AnthemAnalysisPipelineTests: XCTestCase {
         let expected = AnthemCandidateScorer.rankedCandidates(from: frames)
         let result = AnthemAnalysisPipeline.analyse(waveformSamples: samples, trackDuration: duration)
         XCTAssertEqual(result.candidates.map(\.candidate), expected)
+    }
+}
+
+extension AnthemAnalysisPipelineTests {
+    func testAudibleFlatWaveformRemainsAnalysable() {
+        let result = AnthemAnalysisPipeline.analyse(waveformSamples: [0.8,0.8,0.8,0.8], trackDuration: 40)
+        XCTAssertNotEqual(result.status, .invalidInput)
+        XCTAssertNotEqual(result.status, .noCandidates)
     }
 }

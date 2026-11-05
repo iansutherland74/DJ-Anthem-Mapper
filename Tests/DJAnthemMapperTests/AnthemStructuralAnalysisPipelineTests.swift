@@ -58,10 +58,10 @@ final class AnthemStructuralAnalysisPipelineTests: XCTestCase {
         XCTAssertTrue(result.candidates.allSatisfy { $0.candidate.startTime >= 0 && $0.candidate.endTime <= duration })
     }
 
-    func testSilentWaveformIsSafeAndFinite() {
+    func testSilentWaveformReturnsNoCandidates() {
         let result = AnthemStructuralAnalysisPipeline.analyse(waveformSamples: [0,0,0,0,0], trackDuration: 50)
-        XCTAssertEqual(result.status, .analysed)
-        XCTAssertTrue(result.candidates.allSatisfy { $0.compositeScore.isFinite && (0...1).contains($0.compositeScore) })
+        XCTAssertEqual(result.status, .noCandidates)
+        XCTAssertTrue(result.candidates.isEmpty)
     }
 
     func testCustomMaximumCandidateCountPropagates() {

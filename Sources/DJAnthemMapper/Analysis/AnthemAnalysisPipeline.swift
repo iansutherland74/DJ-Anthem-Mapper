@@ -49,6 +49,11 @@ enum AnthemAnalysisPipeline {
             from: waveformSamples,
             trackDuration: trackDuration
         )
+        guard let inputQuality = AnthemAnalysisInputQualityAnalyser.analyse(frames: frames),
+              inputQuality.hasMeaningfulSignal else {
+            return .init(status: .noCandidates, candidates: [])
+        }
+
         guard !frames.isEmpty else {
             return .init(status: .noCandidates, candidates: [])
         }
