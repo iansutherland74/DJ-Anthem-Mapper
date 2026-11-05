@@ -1,0 +1,43 @@
+=== M3-05D FINAL CERTIFICATION ===
+2026-11-05T14:53:52Z
+
+=== STATUS ===
+PASS: M3-05D frozen certified Open unsaved-change protection baseline
+PASS: M3-05D manual acceptance
+PASS: M3-05D automated integration
+
+=== NATIVE ARM64 VALIDATION ===
+PASS: MainShellView syntax parse
+PASS: clean warning-free swift build
+PASS: swift test list discovered 477 tests
+PASS: required M3-05D/M3-05C/Open/track-match/save/state/stress regressions
+PASS: full swift test, 477/477 passed with zero failures
+
+=== FROZEN BEHAVIOR ===
+PASS: protective Save exposes the clean replacement session before the held Open continuation
+PASS: existing Open execution and wrong-map rejection remain preserved
+PASS: M3-05C Change Track protection remains unchanged
+PASS: startImport(_:) remains unchanged
+PASS: M3-04G workspace presentation/layout remains unchanged
+PASS: frozen M3-03 marker content remains unchanged
+
+=== ACCEPTED SHA-256 ===
+MainShellView.swift
+03fc4ca57bb9d054d490cd590bb3cadd908a2aa000b51315fe5eaf00633b826f
+
+AnthemMapOpenProtectionCoordinator.swift
+84f7a5df4bd011665fe5e08d79311e11b5aacb10450d5e17a2ffd20d03fbf8ff
+
+AnthemMapOpenProtectionCoordinatorTests.swift
+2ee1f5d559a98ee2c3fb9f981d227c999d692851960ad1408d631ac99b98069e
+
+=== GIT BASELINE ===
+Primary branch: main
+Application baseline commit:
+281ae775c529689fd6aae6eed0acabb6499ef2a5
+
+The M3-05D annotated certification tag identifies the certification commit containing this report.
+
+=== ARCHITECTURE ===
+Parent ARCHFLAGS remains -arch x86_64.
+ARCHFLAGS was unset only in native arm64 child validation commands.
