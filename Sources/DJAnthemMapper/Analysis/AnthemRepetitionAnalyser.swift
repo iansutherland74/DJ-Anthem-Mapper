@@ -1,13 +1,13 @@
 import Foundation
 
 struct AnthemRepetitionConfiguration: Equatable, Sendable {
-    var windowFrameCount: Int = 4
+    var comparisonWindowDuration: TimeInterval = 4
     var similarityThreshold: Float = 0.80
     var maximumOverlapRatio: Double = 0.25
     var maximumMatches: Int = 4
 
     var isValid: Bool {
-        windowFrameCount > 1 && maximumMatches > 0 &&
+        comparisonWindowDuration.isFinite && comparisonWindowDuration > 0 && maximumMatches > 0 &&
         similarityThreshold.isFinite && (0...1).contains(similarityThreshold) &&
         maximumOverlapRatio.isFinite && (0...1).contains(maximumOverlapRatio)
     }
@@ -35,29 +35,38 @@ enum AnthemRepetitionAnalyser {
         configuration: AnthemRepetitionConfiguration = .init()
     ) -> [AnthemRepetitionEvidence] {
         guard configuration.isValid else { return [] }
-        let ordered = frames.filter {
-            $0.startTime.isFinite && $0.duration.isFinite && $0.duration > 0 && $0.energy.isFinite
-        }.sorted { $0.startTime < $1.startTime }
-        guard ordered.count >= configuration.windowFrameCount else { return [] }
-
-        let lastStart = ordered.count - configuration.windowFrameCount
+        let ordered = AnthemAnalysisTimeline.validOrderedFrames(frames)
+        guard !ordered.isEmpty else { return [] }
+        let trackEnd = ordered.map { $0.startTime + $0.duration }.max() ?? 0
+        var windows: [(range: AnthemAnalysisTimeRange, frames: [AnthemAnalysisFrame])] = []
+        for frame in ordered {
+            let requestedEnd = frame.startTime + configuration.comparisonWindowDuration
+            let actualEnd = min(requestedEnd, trackEnd)
+            let range = AnthemAnalysisTimeRange(startTime: frame.startTime, endTime: actualEnd)
+            guard range.isValid else { continue }
+            let selected = AnthemAnalysisTimeline.frames(overlapping: range, in: ordered)
+            guard !selected.isEmpty else { continue }
+            windows.append((range, selected))
+        }
+        guard !windows.isEmpty else { return [] }
         var results: [AnthemRepetitionEvidence] = []
-        for sourceIndex in 0...lastStart {
-            let source = Array(ordered[sourceIndex..<(sourceIndex + configuration.windowFrameCount)])
-            let sourceStart = source.first!.startTime
-            let sourceEnd = source.last!.startTime + source.last!.duration
+        for sourceIndex in windows.indices {
+            let sourceWindow = windows[sourceIndex]
+            let source = sourceWindow.frames
+            let sourceStart = sourceWindow.range.startTime
+            let sourceEnd = sourceWindow.range.endTime
             guard meaningful(source) else {
                 results.append(.init(sourceStartTime: sourceStart, sourceEndTime: sourceEnd, bestSimilarity: 0, repetitionStrength: 0, matches: []))
                 continue
             }
             var matches: [AnthemRepetitionMatch] = []
-            for matchIndex in 0...lastStart where matchIndex != sourceIndex {
-                let match = Array(ordered[matchIndex..<(matchIndex + configuration.windowFrameCount)])
-                let matchStart = match.first!.startTime
-                let matchEnd = match.last!.startTime + match.last!.duration
+            for matchIndex in windows.indices where matchIndex != sourceIndex {
+                let matchWindow = windows[matchIndex]
+                let matchStart = matchWindow.range.startTime
+                let matchEnd = matchWindow.range.endTime
                 guard overlapRatio(sourceStart, sourceEnd, matchStart, matchEnd) <= configuration.maximumOverlapRatio else { continue }
-                guard meaningful(match) else { continue }
-                let similarity = shapeSimilarity(source, match)
+                guard meaningful(matchWindow.frames) else { continue }
+                let similarity = shapeSimilarity(source, matchWindow.frames)
                 guard similarity >= configuration.similarityThreshold else { continue }
                 matches.append(.init(sourceStartTime: sourceStart, sourceEndTime: sourceEnd, matchStartTime: matchStart, matchEndTime: matchEnd, similarity: similarity))
             }

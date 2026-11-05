@@ -38,12 +38,27 @@ final class AnthemRepetitionAnalyserTests: XCTestCase {
 
     func testInvalidConfigurationReturnsEmpty() {
         var config = AnthemRepetitionConfiguration()
-        config.windowFrameCount = 1
+        config.comparisonWindowDuration = 0
         XCTAssertTrue(AnthemRepetitionAnalyser.analyse(frames: frames([0.1,0.4,0.9,0.5]), configuration: config).isEmpty)
     }
 
-    func testInputShorterThanWindowReturnsEmpty() {
-        XCTAssertTrue(AnthemRepetitionAnalyser.analyse(frames: frames([0.1,0.8])).isEmpty)
+    func testInputShorterThanWindowUsesActualAvailableRange() {
+        var config = AnthemRepetitionConfiguration()
+        config.comparisonWindowDuration = 4
+        let result = AnthemRepetitionAnalyser.analyse(
+            frames: frames([0.1,0.8]),
+            configuration: config
+        )
+        XCTAssertFalse(result.isEmpty)
+        XCTAssertEqual(result.first?.sourceStartTime ?? -1, 0, accuracy: 0.0001)
+        XCTAssertEqual(result.first?.sourceEndTime ?? -1, 2, accuracy: 0.0001)
+        XCTAssertTrue(result.allSatisfy {
+            $0.sourceStartTime.isFinite &&
+            $0.sourceEndTime.isFinite &&
+            $0.sourceEndTime <= 2 &&
+            $0.bestSimilarity.isFinite &&
+            $0.repetitionStrength.isFinite
+        })
     }
 
     func testUnsortedInputIsDeterministic() {
