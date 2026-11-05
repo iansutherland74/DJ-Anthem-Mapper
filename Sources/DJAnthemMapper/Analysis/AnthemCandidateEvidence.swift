@@ -27,19 +27,29 @@ enum AnthemCandidateEvidenceAnalyser {
         guard !valid.isEmpty else { return nil }
         let inside = valid.filter { overlaps($0, start: candidate.startTime, end: candidate.endTime) }
         guard !inside.isEmpty else { return nil }
-        let trackMean = mean(valid.map(\.energy))
-        let candidateMean = mean(inside.map(\.energy))
+        let candidateRange = AnthemAnalysisTimeRange(startTime: candidate.startTime, endTime: candidate.endTime)
+        guard let candidateMeasurement = AnthemAnalysisMeasurements.weightedEnergy(in: candidateRange, frames: valid) else { return nil }
+        let trackStart = valid.map(\.startTime).min() ?? 0
+        let trackEnd = valid.map { $0.startTime + $0.duration }.max() ?? trackStart
+        let trackRange = AnthemAnalysisTimeRange(startTime: trackStart, endTime: trackEnd)
+        let trackMean = AnthemAnalysisMeasurements.weightedEnergy(in: trackRange, frames: valid)?.weightedMean ?? 0
+        let candidateMean = candidateMeasurement.weightedMean
         let peak = inside.map(\.energy).max() ?? 0
         let relative = clamp(candidateMean - trackMean + 0.5)
-        let spread = mean(inside.map { abs($0.energy - candidateMean) })
+        let spread = AnthemAnalysisMeasurements.weightedDeviation(in: candidateRange, frames: valid, mean: candidateMean)
         let consistency = clamp(1 - spread)
         let window = candidate.duration
-        let surrounding = valid.filter { frame in
-            let midpoint = frame.startTime + frame.duration / 2
-            return (midpoint >= candidate.startTime - window && midpoint < candidate.startTime) ||
-                   (midpoint >= candidate.endTime && midpoint < candidate.endTime + window)
+        let preRange = AnthemAnalysisTimeRange(startTime: max(0, candidate.startTime - window), endTime: candidate.startTime)
+        let postRange = AnthemAnalysisTimeRange(startTime: candidate.endTime, endTime: min(trackEnd, candidate.endTime + window))
+        let pre = preRange.isValid ? AnthemAnalysisMeasurements.weightedEnergy(in: preRange, frames: valid) : nil
+        let post = postRange.isValid ? AnthemAnalysisMeasurements.weightedEnergy(in: postRange, frames: valid) : nil
+        let surroundingParts = [pre, post].compactMap { $0 }
+        let surroundingMean: Float
+        if surroundingParts.isEmpty { surroundingMean = trackMean }
+        else {
+            let totalDuration = surroundingParts.reduce(0.0) { $0 + $1.coveredDuration }
+            surroundingMean = totalDuration > 0 ? Float(surroundingParts.reduce(0.0) { $0 + Double($1.weightedMean) * $1.coveredDuration } / totalDuration) : trackMean
         }
-        let surroundingMean = surrounding.isEmpty ? trackMean : mean(surrounding.map(\.energy))
         let contrast = clamp(candidateMean - surroundingMean + 0.5)
         let score = clamp(candidateMean * 0.30 + peak * 0.15 + relative * 0.20 + consistency * 0.15 + contrast * 0.20)
         let confidence: AnthemCandidateConfidence = score >= 0.75 ? .high : (score >= 0.50 ? .medium : .low)

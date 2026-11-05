@@ -25,3 +25,13 @@ enum AnthemAnalysisTimeline {
         }
     }
 }
+
+extension AnthemAnalysisTimeline {
+    static func overlapDuration(of frame: AnthemAnalysisFrame, with range: AnthemAnalysisTimeRange) -> TimeInterval {
+        guard range.isValid,
+              frame.startTime.isFinite, frame.duration.isFinite, frame.duration > 0 else { return 0 }
+        let start = max(frame.startTime, range.startTime)
+        let end = min(frame.startTime + frame.duration, range.endTime)
+        return max(0, end - start)
+    }
+}

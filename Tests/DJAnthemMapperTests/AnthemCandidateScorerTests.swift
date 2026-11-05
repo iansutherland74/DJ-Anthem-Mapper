@@ -112,3 +112,11 @@ final class AnthemCandidateScorerTests: XCTestCase {
         XCTAssertTrue(AnthemCandidateScorer.rankedCandidates(from: frames, maximumOverlapRatio: .nan).isEmpty)
     }
 }
+
+extension AnthemCandidateScorerTests {
+    func testDurationWeightedCandidateScoreUsesUnequalFrameDurations() {
+        let frames = [AnthemAnalysisFrame(startTime: 0, duration: 1, energy: 1), AnthemAnalysisFrame(startTime: 1, duration: 3, energy: 0)]
+        let result = AnthemCandidateScorer.rankedCandidates(from: frames, preferredDuration: 4, maximumCount: 1)
+        XCTAssertEqual(result.first?.score ?? -1, 0.25, accuracy: 0.0001)
+    }
+}

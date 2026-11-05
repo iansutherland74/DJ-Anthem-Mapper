@@ -49,28 +49,15 @@ enum AnthemCandidateScorer {
         for startIndex in orderedFrames.indices {
             let startTime = orderedFrames[startIndex].startTime
             let targetEnd = startTime + preferredDuration
-            var total: Float = 0
-            var count = 0
-            var endTime = startTime
-
-            for index in startIndex..<orderedFrames.endIndex {
-                let frame = orderedFrames[index]
-                guard frame.startTime < targetEnd else { break }
-
-                let clippedEnd = min(frame.startTime + frame.duration, targetEnd)
-                guard clippedEnd > frame.startTime else { continue }
-
-                total += frame.energy
-                count += 1
-                endTime = max(endTime, clippedEnd)
-            }
-
-            guard count > 0, endTime > startTime else { continue }
+            let availableEnd = orderedFrames.map { $0.startTime + $0.duration }.max() ?? startTime
+            let endTime = min(targetEnd, availableEnd)
+            let range = AnthemAnalysisTimeRange(startTime: startTime, endTime: endTime)
+            guard let measurement = AnthemAnalysisMeasurements.weightedEnergy(in: range, frames: orderedFrames) else { continue }
             candidates.append(
                 AnthemCandidate(
                     startTime: startTime,
                     endTime: endTime,
-                    score: total / Float(count)
+                    score: measurement.weightedMean
                 )
             )
         }

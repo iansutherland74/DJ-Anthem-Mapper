@@ -59,3 +59,12 @@ final class AnthemCandidateEvidenceTests: XCTestCase {
         XCTAssertLessThan(AnthemCandidateConfidence.medium, .high)
     }
 }
+
+extension AnthemCandidateEvidenceTests {
+    func testEvidenceMeanEnergyUsesDurationWeighting() {
+        let frames = [AnthemAnalysisFrame(startTime: 0, duration: 1, energy: 1), AnthemAnalysisFrame(startTime: 1, duration: 3, energy: 0)]
+        let c = AnthemCandidate(startTime: 0, endTime: 4, score: 0.25)
+        let result = AnthemCandidateEvidenceAnalyser.analyse(candidate: c, frames: frames)
+        XCTAssertEqual(result?.meanEnergy ?? -1, 0.25, accuracy: 0.0001)
+    }
+}
