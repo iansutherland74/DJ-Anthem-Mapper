@@ -38,21 +38,84 @@ struct MainShellView: View {
         .background(AnthemTheme.background)
     }
 
-    @ViewBuilder private var workspace: some View {
+    private var workspace: some View {
+        ZStack {
+            persistentImportWorkspace
+                .opacity(selection == .importMedia ? 1 : 0)
+                .allowsHitTesting(selection == .importMedia)
+                .accessibilityHidden(selection != .importMedia)
+
+            if selection != .importMedia {
+                selectedPlaceholderWorkspace
+            }
+        }
+        .frame(
+            maxWidth: .infinity,
+            maxHeight: .infinity,
+            alignment: .top
+        )
+    }
+
+    private var persistentImportWorkspace: some View {
+        ScrollView(.vertical, showsIndicators: true) {
+            ImportWorkspace(
+                media: $media,
+                isImporting: $isImporting,
+                importError: $importError,
+                selectedAudioStreamID: $selectedAudioStreamID,
+                playback: playback
+            )
+            .frame(maxWidth: .infinity, alignment: .top)
+            .padding(.top, 16)
+            .padding(.bottom, 20)
+        }
+        .frame(
+            maxWidth: .infinity,
+            maxHeight: .infinity,
+            alignment: .top
+        )
+    }
+
+    @ViewBuilder
+    private var selectedPlaceholderWorkspace: some View {
         switch selection {
         case .importMedia:
-            ScrollView(.vertical, showsIndicators: true) {
-                ImportWorkspace(media: $media, isImporting: $isImporting, importError: $importError, selectedAudioStreamID: $selectedAudioStreamID, playback: playback)
-                    .frame(maxWidth: .infinity, alignment: .top)
-                    .padding(.top, 16)
-                    .padding(.bottom, 20)
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        case .library: PlaceholderWorkspace(title: "Library", subtitle: "Your imported music will appear here.", icon: "music.note.list")
-        case .analysis: PlaceholderWorkspace(title: "Track Analysis", subtitle: "Audio analysis will appear here.", icon: "waveform.path.ecg")
-        case .anthemMap: PlaceholderWorkspace(title: "Anthem Map", subtitle: "Analyse a track to build its Anthem Map.", icon: "map")
-        case .playlists: PlaceholderWorkspace(title: "Playlists", subtitle: "Playlist organisation will appear here.", icon: "music.note.house")
-        case .settings: PlaceholderWorkspace(title: "Settings", subtitle: "DJ Anthem Mapper preferences.", icon: "gearshape")
+            EmptyView()
+
+        case .library:
+            PlaceholderWorkspace(
+                title: "Library",
+                subtitle: "Your imported music will appear here.",
+                icon: "music.note.list"
+            )
+
+        case .analysis:
+            PlaceholderWorkspace(
+                title: "Track Analysis",
+                subtitle: "Audio analysis will appear here.",
+                icon: "waveform.path.ecg"
+            )
+
+        case .anthemMap:
+            PlaceholderWorkspace(
+                title: "Anthem Map",
+                subtitle: "Analyse a track to build its Anthem Map.",
+                icon: "map"
+            )
+
+        case .playlists:
+            PlaceholderWorkspace(
+                title: "Playlists",
+                subtitle: "Playlist organisation will appear here.",
+                icon: "music.note.house"
+            )
+
+        case .settings:
+            PlaceholderWorkspace(
+                title: "Settings",
+                subtitle: "DJ Anthem Mapper preferences.",
+                icon: "gearshape"
+            )
         }
     }
 }
