@@ -1,0 +1,30 @@
+# SwiftPM and Xcode build products
+/.build/
+/DerivedData/
+/*.app/
+
+# Local/editor metadata
+.DS_Store
+**/.DS_Store
+*.xcuserstate
+xcuserdata/
+
+# Local backups and generated validation output
+/.backups/
+/.4bh*/
+/.fix*/
+/.phase*/
+/backup-before-*/
+/Package.swift.pre-*
+/FIX*-package.json
+/Build DJ Anthem Mapper.command
+/*.log
+
+# Local secrets and signing material
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.mobileprovision

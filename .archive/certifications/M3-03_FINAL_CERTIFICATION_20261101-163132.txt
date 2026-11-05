@@ -1,0 +1,1164 @@
+=== M3-03 FINAL CERTIFICATION ===
+Sun  1 Nov 2026 16:31:32 GMT
+=== BASELINE MARKERS ===
+PASS: M3_03A_ANTHEM_MAP_READ_ENGINE
+PASS: M3_03B_RESTORATION_BUILDER
+PASS: M3_03C_CONTROLLER_RESTORATION_BRIDGE
+PASS: M3_03D_TRACK_IDENTITY_MATCHER
+PASS: M3_03E_OPEN_PANEL_CONFIGURATION
+PASS: M3_03E_OPEN_PANEL_PRESENTER
+PASS: M3_03F_OPEN_COORDINATOR
+PASS: M3_03G_LOADED_MEDIA_IDENTITY_BRIDGE
+PASS: M3_03H_OPEN_ANTHEM_MAP_UI_INTEGRATION
+=== H END-TO-END SOURCE AUDIT ===
+PASS: E -> G -> F UI chain and preserved certified paths present
+=== SOURCE TREE AUDIT ===
+PASS: no backup/editor artefacts under Sources
+=== SYNTAX PARSE ===
+PASS: MainShellView syntax parse
+=== CLEAN WARNING-FREE BUILD ===
+Building for debugging...
+[Planning deferred tasks]
+[19 / 24]
+[20 / 25] DJAnthemMapper-product
+[31 / 111]
+[37 / 111]
+[42 / 111]
+[44 / 111]
+[50 / 111]
+[53 / 111]
+[61 / 111]
+[64 / 111]
+[66 / 111]
+[67 / 111]
+[80 / 111]
+[81 / 111]
+[86 / 111]
+[91 / 111]
+[92 / 111]
+[106 / 111] DJAnthemMapper-product
+[107 / 111] DJAnthemMapper-product
+[109 / 111] DJAnthemMapper-product
+Build complete! (7.04 secs)
+PASS: clean warning-free build
+=== COMPLETE TEST-TARGET COMPILE/LIST ===
+Building for debugging...
+[Planning deferred tasks]
+[17 / 40] DJAnthemMapper
+[30 / 53] DJAnthemMapper
+[38 / 53] DJAnthemMapper
+[43 / 54] DJAnthemMapperTests-product
+[47 / 72]
+[48 / 72]
+[61 / 72] DJAnthemMapperTests-product
+[62 / 72] DJAnthemMapperTests-product
+[66 / 72] DJAnthemMapperTests-product
+[68 / 72] DJAnthemMapperTests-product
+Build complete! (7.36 secs)
+PASS: swift test list
+=== M3-03G IDENTITY BRIDGE ===
+Building for debugging...
+[1 / 5]
+Build complete! (0.26 secs)
+Test Suite 'Selected tests' started at 2026-11-01 16:31:49.800.
+Test Suite 'DJAnthemMapperTests.xctest' started at 2026-11-01 16:31:49.801.
+Test Suite 'AnthemMapLoadedMediaIdentityBuilderTests' started at 2026-11-01 16:31:49.801.
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testBridgeMatchesDirectCertifiedBuilderOutput]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testBridgeMatchesDirectCertifiedBuilderOutput]' passed (0.001 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testDurationUsesExistingBuilderRoundingPolicy]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testDurationUsesExistingBuilderRoundingPolicy]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testExistingSourceFileSizeIsCapturedExactly]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testExistingSourceFileSizeIsCapturedExactly]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testIdentityBuildingDoesNotModifySourceFile]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testIdentityBuildingDoesNotModifySourceFile]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testM4AUsesOriginalSourceIdentity]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testM4AUsesOriginalSourceIdentity]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testMKVUsesOriginalSourceIdentity]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testMKVUsesOriginalSourceIdentity]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testMP3UsesOriginalSourceIdentity]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testMP3UsesOriginalSourceIdentity]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testMP4UsesOriginalSourceIdentity]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testMP4UsesOriginalSourceIdentity]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testNoLoadedMediaThrowsNoLoadedMedia]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testNoLoadedMediaThrowsNoLoadedMedia]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testNonFiniteDurationPropagatesTypedIdentityFailure]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testNonFiniteDurationPropagatesTypedIdentityFailure]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testWAVUsesOriginalSourceIdentity]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testWAVUsesOriginalSourceIdentity]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testZeroDurationPropagatesTypedIdentityFailure]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testZeroDurationPropagatesTypedIdentityFailure]' passed (0.000 seconds).
+Test Suite 'AnthemMapLoadedMediaIdentityBuilderTests' passed at 2026-11-01 16:31:49.806.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 0.005 (0.005) seconds
+Test Suite 'DJAnthemMapperTests.xctest' passed at 2026-11-01 16:31:49.806.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 0.005 (0.005) seconds
+Test Suite 'Selected tests' passed at 2026-11-01 16:31:49.806.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 0.005 (0.006) seconds
+=== M3-03F OPEN COORDINATOR ===
+Building for debugging...
+Build complete! (0.23 secs)
+Test Suite 'Selected tests' started at 2026-11-01 16:31:50.850.
+Test Suite 'DJAnthemMapperTests.xctest' started at 2026-11-01 16:31:50.851.
+Test Suite 'AnthemMapOpenCoordinatorTests' started at 2026-11-01 16:31:50.851.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testDurationMismatchPreventsRestoration]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testDurationMismatchPreventsRestoration]' passed (0.002 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testFilenameMismatchPreventsRestoration]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testFilenameMismatchPreventsRestoration]' passed (0.001 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testFileSizeMismatchPreventsRestoration]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testFileSizeMismatchPreventsRestoration]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testInvalidDocumentFailsWithoutControllerMutation]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testInvalidDocumentFailsWithoutControllerMutation]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testMalformedMapFailsWithoutControllerMutation]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testMalformedMapFailsWithoutControllerMutation]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testMissingMapFailsWithoutControllerMutation]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testMissingMapFailsWithoutControllerMutation]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testMultipleMismatchReasonsArePreserved]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testMultipleMismatchReasonsArePreserved]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testResetReturnsStatusToIdle]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testResetReturnsStatusToIdle]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testSuccessSetsOpenedStatus]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testSuccessSetsOpenedStatus]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testUUIDAndTimingArePreservedEndToEnd]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testUUIDAndTimingArePreservedEndToEnd]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testValidMapAndMatchingTrackRestoresSuccessfully]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testValidMapAndMatchingTrackRestoresSuccessfully]' passed (0.000 seconds).
+Test Suite 'AnthemMapOpenCoordinatorTests' passed at 2026-11-01 16:31:50.857.
+	 Executed 11 tests, with 0 failures (0 unexpected) in 0.006 (0.006) seconds
+Test Suite 'DJAnthemMapperTests.xctest' passed at 2026-11-01 16:31:50.857.
+	 Executed 11 tests, with 0 failures (0 unexpected) in 0.006 (0.006) seconds
+Test Suite 'Selected tests' passed at 2026-11-01 16:31:50.857.
+	 Executed 11 tests, with 0 failures (0 unexpected) in 0.006 (0.007) seconds
+=== M3-03E OPEN CONFIGURATION ===
+Building for debugging...
+Build complete! (0.23 secs)
+Test Suite 'Selected tests' started at 2026-11-01 16:31:51.925.
+Test Suite 'DJAnthemMapperTests.xctest' started at 2026-11-01 16:31:51.926.
+Test Suite 'AnthemMapOpenPanelConfigurationTests' started at 2026-11-01 16:31:51.926.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenPanelConfigurationTests testDirectoriesCannotBeSelected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenPanelConfigurationTests testDirectoriesCannotBeSelected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenPanelConfigurationTests testExtensionIsAnthemMap]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenPanelConfigurationTests testExtensionIsAnthemMap]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenPanelConfigurationTests testExtensionUsesSharedSuggestedFilenameConstant]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenPanelConfigurationTests testExtensionUsesSharedSuggestedFilenameConstant]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenPanelConfigurationTests testFilesCanBeSelected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenPanelConfigurationTests testFilesCanBeSelected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenPanelConfigurationTests testMultipleSelectionIsDisabled]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenPanelConfigurationTests testMultipleSelectionIsDisabled]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenPanelConfigurationTests testRepeatedConfigurationCreationIsDeterministic]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenPanelConfigurationTests testRepeatedConfigurationCreationIsDeterministic]' passed (0.000 seconds).
+Test Suite 'AnthemMapOpenPanelConfigurationTests' passed at 2026-11-01 16:31:51.927.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'DJAnthemMapperTests.xctest' passed at 2026-11-01 16:31:51.927.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'Selected tests' passed at 2026-11-01 16:31:51.927.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.001 (0.002) seconds
+=== M3-03D TRACK MATCHER ===
+Building for debugging...
+Build complete! (0.24 secs)
+Test Suite 'Selected tests' started at 2026-11-01 16:31:53.037.
+Test Suite 'DJAnthemMapperTests.xctest' started at 2026-11-01 16:31:53.038.
+Test Suite 'AnthemMapTrackMatcherTests' started at 2026-11-01 16:31:53.038.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testActualNilFileSizeDoesNotCauseMismatch]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testActualNilFileSizeDoesNotCauseMismatch]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testAllMismatchesAreReportedTogether]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testAllMismatchesAreReportedTogether]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testBothNilFileSizesMatch]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testBothNilFileSizesMatch]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testComparisonDoesNotMutateIdentities]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testComparisonDoesNotMutateIdentities]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testDurationMismatchIsReported]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testDurationMismatchIsReported]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testExpectedNilFileSizeDoesNotCauseMismatch]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testExpectedNilFileSizeDoesNotCauseMismatch]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testFilenameExtensionParticipatesInComparison]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testFilenameExtensionParticipatesInComparison]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testFilenameMismatchIsReported]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testFilenameMismatchIsReported]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testFilenameSpacesAreComparedExactly]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testFilenameSpacesAreComparedExactly]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testFileSizeMismatchIsReported]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testFileSizeMismatchIsReported]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testIdenticalIdentitiesMatch]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testIdenticalIdentitiesMatch]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testSameInputsProduceSameResult]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testSameInputsProduceSameResult]' passed (0.000 seconds).
+Test Suite 'AnthemMapTrackMatcherTests' passed at 2026-11-01 16:31:53.040.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 0.001 (0.002) seconds
+Test Suite 'DJAnthemMapperTests.xctest' passed at 2026-11-01 16:31:53.040.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 0.001 (0.002) seconds
+Test Suite 'Selected tests' passed at 2026-11-01 16:31:53.040.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 0.001 (0.003) seconds
+=== M3-03C FIX1 CONTROLLER RESTORATION ===
+Building for debugging...
+Build complete! (0.23 secs)
+Test Suite 'Selected tests' started at 2026-11-01 16:31:54.086.
+Test Suite 'DJAnthemMapperTests.xctest' started at 2026-11-01 16:31:54.087.
+Test Suite 'AnthemMapControllerRestorationTests' started at 2026-11-01 16:31:54.087.
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testDuplicateUUIDsAreRejectedWithoutMutation]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testDuplicateUUIDsAreRejectedWithoutMutation]' passed (0.001 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testEightRegionsRestore]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testEightRegionsRestore]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testEmptyRestorationIsRejectedWithoutMutation]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testEmptyRestorationIsRejectedWithoutMutation]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testFirstRestoredRegionBecomesActive]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testFirstRestoredRegionBecomesActive]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testInvalidLiveRegionIsRejectedWithoutMutation]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testInvalidLiveRegionIsRejectedWithoutMutation]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testRestorationReplacesExistingRegions]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testRestorationReplacesExistingRegions]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testStableUUIDsArePreserved]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testStableUUIDsArePreserved]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testSuccessfulRestoreClearsValidationMessage]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testSuccessfulRestoreClearsValidationMessage]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testTimingsArePreserved]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testTimingsArePreserved]' passed (0.000 seconds).
+Test Suite 'AnthemMapControllerRestorationTests' passed at 2026-11-01 16:31:54.089.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.002 (0.002) seconds
+Test Suite 'DJAnthemMapperTests.xctest' passed at 2026-11-01 16:31:54.089.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.002 (0.002) seconds
+Test Suite 'Selected tests' passed at 2026-11-01 16:31:54.089.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.002 (0.003) seconds
+=== M3-03B RESTORATION BUILDER ===
+Building for debugging...
+Build complete! (0.23 secs)
+Test Suite 'Selected tests' started at 2026-11-01 16:31:55.138.
+Test Suite 'DJAnthemMapperTests.xctest' started at 2026-11-01 16:31:55.139.
+Test Suite 'AnthemMapRestorationBuilderTests' started at 2026-11-01 16:31:55.139.
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testBuilderDoesNotMutateDocument]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testBuilderDoesNotMutateDocument]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testEightRegionsRestore]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testEightRegionsRestore]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testEmptyPersistentRegionListProducesEmptyRestorationList]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testEmptyPersistentRegionListProducesEmptyRestorationList]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testInvalidDocumentIsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testInvalidDocumentIsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testMillisecondPrecisionIsPreservedExactly]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testMillisecondPrecisionIsPreservedExactly]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testRestorationProducesCompleteValidRegions]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testRestorationProducesCompleteValidRegions]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testSingleRegionRestoresMillisecondsAsSeconds]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testSingleRegionRestoresMillisecondsAsSeconds]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testSlotOrderingControlsRestoredOrdering]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testSlotOrderingControlsRestoredOrdering]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testStableUUIDIsPreserved]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testStableUUIDIsPreserved]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testTrackIdentityIsPreservedExactly]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testTrackIdentityIsPreservedExactly]' passed (0.000 seconds).
+Test Suite 'AnthemMapRestorationBuilderTests' passed at 2026-11-01 16:31:55.141.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.001 (0.002) seconds
+Test Suite 'DJAnthemMapperTests.xctest' passed at 2026-11-01 16:31:55.141.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.001 (0.002) seconds
+Test Suite 'Selected tests' passed at 2026-11-01 16:31:55.141.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.001 (0.003) seconds
+=== M3-03A READ ENGINE ===
+Building for debugging...
+Build complete! (0.23 secs)
+Test Suite 'Selected tests' started at 2026-11-01 16:31:56.198.
+Test Suite 'DJAnthemMapperTests.xctest' started at 2026-11-01 16:31:56.199.
+Test Suite 'AnthemMapReadEngineTests' started at 2026-11-01 16:31:56.199.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testDuplicateSlotIsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testDuplicateSlotIsRejected]' passed (0.001 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testDuplicateUUIDIsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testDuplicateUUIDIsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testIdentitySlotAndTimingArePreserved]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testIdentitySlotAndTimingArePreserved]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testInvalidRegionOrderingIsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testInvalidRegionOrderingIsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testInvalidTrackDurationIsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testInvalidTrackDurationIsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testLoadDoesNotModifySourceFile]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testLoadDoesNotModifySourceFile]' passed (0.001 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testMalformedJSONIsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testMalformedJSONIsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testMissingFileIsReadFailure]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testMissingFileIsReadFailure]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testMultipleRegionOrderingIsPreserved]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testMultipleRegionOrderingIsPreserved]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testRegionBeyondTrackIsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testRegionBeyondTrackIsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testUnsupportedFormatVersionIsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testUnsupportedFormatVersionIsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testValidDocumentDecodesIdentically]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testValidDocumentDecodesIdentically]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testValidSavedFileLoadsIdentically]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testValidSavedFileLoadsIdentically]' passed (0.001 seconds).
+Test Suite 'AnthemMapReadEngineTests' passed at 2026-11-01 16:31:56.203.
+	 Executed 13 tests, with 0 failures (0 unexpected) in 0.004 (0.004) seconds
+Test Suite 'DJAnthemMapperTests.xctest' passed at 2026-11-01 16:31:56.203.
+	 Executed 13 tests, with 0 failures (0 unexpected) in 0.004 (0.004) seconds
+Test Suite 'Selected tests' passed at 2026-11-01 16:31:56.203.
+	 Executed 13 tests, with 0 failures (0 unexpected) in 0.004 (0.005) seconds
+=== M3-02 SAVE COORDINATOR ===
+Building for debugging...
+[1 / 5]
+Build complete! (0.38 secs)
+Test Suite 'Selected tests' started at 2026-11-01 16:31:57.402.
+Test Suite 'DJAnthemMapperTests.xctest' started at 2026-11-01 16:31:57.403.
+Test Suite 'AnthemMapSaveCoordinatorTests' started at 2026-11-01 16:31:57.403.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testIncompleteFinalRegionIsOmittedFromPreparedDocument]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testIncompleteFinalRegionIsOmittedFromPreparedDocument]' passed (0.001 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testIneligiblePreparationThrowsNotEligible]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testIneligiblePreparationThrowsNotEligible]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testInitialStateIsIdleAndNotSaveable]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testInitialStateIsIdleAndNotSaveable]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testInvalidReevaluationClearsPreparedSaveAndDisablesSave]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testInvalidReevaluationClearsPreparedSaveAndDisablesSave]' passed (0.001 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testInvalidTrackDurationIsNotSaveable]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testInvalidTrackDurationIsNotSaveable]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testMissingMediaIsNotSaveable]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testMissingMediaIsNotSaveable]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testNoCompleteRegionIsNotSaveable]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testNoCompleteRegionIsNotSaveable]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testPreparationDoesNotMutateInputRegions]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testPreparationDoesNotMutateInputRegions]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testPreparedDocumentContainsCorrectRegion]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testPreparedDocumentContainsCorrectRegion]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testPreparedTrackIdentityIsCorrect]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testPreparedTrackIdentityIsCorrect]' passed (0.002 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testReevaluationClearsPreviouslyPreparedSave]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testReevaluationClearsPreviouslyPreparedSave]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testRegionUUIDsAndSlotsArePreserved]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testRegionUUIDsAndSlotsArePreserved]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testResetReturnsCoordinatorToInitialState]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testResetReturnsCoordinatorToInitialState]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testSuggestedFilenameComesFromB4]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testSuggestedFilenameComesFromB4]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testValidEditorStateEvaluatesReady]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testValidEditorStateEvaluatesReady]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testValidStatePreparesSuccessfully]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testValidStatePreparesSuccessfully]' passed (0.000 seconds).
+Test Suite 'AnthemMapSaveCoordinatorTests' passed at 2026-11-01 16:31:57.409.
+	 Executed 16 tests, with 0 failures (0 unexpected) in 0.005 (0.006) seconds
+Test Suite 'DJAnthemMapperTests.xctest' passed at 2026-11-01 16:31:57.409.
+	 Executed 16 tests, with 0 failures (0 unexpected) in 0.005 (0.006) seconds
+Test Suite 'Selected tests' passed at 2026-11-01 16:31:57.409.
+	 Executed 16 tests, with 0 failures (0 unexpected) in 0.005 (0.007) seconds
+=== M3-02 SAVE EXECUTOR ===
+Building for debugging...
+Build complete! (0.23 secs)
+Test Suite 'Selected tests' started at 2026-11-01 16:31:58.455.
+Test Suite 'DJAnthemMapperTests.xctest' started at 2026-11-01 16:31:58.455.
+Test Suite 'AnthemMapSaveExecutorTests' started at 2026-11-01 16:31:58.455.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveExecutorTests testExecutionCreatesFileAtSelectedDestination]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveExecutorTests testExecutionCreatesFileAtSelectedDestination]' passed (0.001 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveExecutorTests testExecutionPreservesPreparedSave]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveExecutorTests testExecutionPreservesPreparedSave]' passed (0.001 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveExecutorTests testExecutionPreservesStableRegionUUIDAndSlot]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveExecutorTests testExecutionPreservesStableRegionUUIDAndSlot]' passed (0.001 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveExecutorTests testExistingFileIsReplacedAtomically]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveExecutorTests testExistingFileIsReplacedAtomically]' passed (0.001 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveExecutorTests testSavedDocumentDecodesIdentically]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveExecutorTests testSavedDocumentDecodesIdentically]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveExecutorTests testWriteFailureIsPropagated]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveExecutorTests testWriteFailureIsPropagated]' passed (0.000 seconds).
+Test Suite 'AnthemMapSaveExecutorTests' passed at 2026-11-01 16:31:58.460.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.004 (0.004) seconds
+Test Suite 'DJAnthemMapperTests.xctest' passed at 2026-11-01 16:31:58.460.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.004 (0.005) seconds
+Test Suite 'Selected tests' passed at 2026-11-01 16:31:58.460.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.004 (0.005) seconds
+=== ACTIVE REGION BRIDGE ===
+Building for debugging...
+Build complete! (0.23 secs)
+Test Suite 'Selected tests' started at 2026-11-01 16:31:59.506.
+Test Suite 'DJAnthemMapperTests.xctest' started at 2026-11-01 16:31:59.507.
+Test Suite 'AnthemRegionActiveBridgeTests' started at 2026-11-01 16:31:59.507.
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testAddingAndSwitchingKeepsRegionsIndependent]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testAddingAndSwitchingKeepsRegionsIndependent]' passed (0.001 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testDeletingActiveSelectsValidNeighbour]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testDeletingActiveSelectsValidNeighbour]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testDeletingOnlyRegionClearsAndKeepsIdentity]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testDeletingOnlyRegionClearsAndKeepsIdentity]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testExistingRegionMigratesToActiveRegionA]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testExistingRegionMigratesToActiveRegionA]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testNudgeChangesOnlyActiveRegion]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testNudgeChangesOnlyActiveRegion]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testResetForNewTrackReturnsToFreshA]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testResetForNewTrackReturnsToFreshA]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testUnknownRegionCannotBeSelectedOrDeleted]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testUnknownRegionCannotBeSelectedOrDeleted]' passed (0.000 seconds).
+Test Suite 'AnthemRegionActiveBridgeTests' passed at 2026-11-01 16:31:59.509.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.002 (0.002) seconds
+Test Suite 'DJAnthemMapperTests.xctest' passed at 2026-11-01 16:31:59.509.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.002 (0.002) seconds
+Test Suite 'Selected tests' passed at 2026-11-01 16:31:59.509.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.002 (0.003) seconds
+=== M2 HIT TESTING ===
+Building for debugging...
+[1 / 5]
+Build complete! (0.37 secs)
+Test Suite 'Selected tests' started at 2026-11-01 16:32:00.725.
+Test Suite 'DJAnthemMapperTests.xctest' started at 2026-11-01 16:32:00.725.
+Test Suite 'MultiRegionWaveformHitTestingTests' started at 2026-11-01 16:32:00.725.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testActiveMarkerEndHasPriority]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testActiveMarkerEndHasPriority]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testActiveMarkerStartHasPriority]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testActiveMarkerStartHasPriority]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testActiveRegionBodyDoesNotReselectIt]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testActiveRegionBodyDoesNotReselectIt]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testClickInsideSingleInactiveRegionSelectsIt]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testClickInsideSingleInactiveRegionSelectsIt]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testClickOutsideAllRegionsSeeksWaveform]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testClickOutsideAllRegionsSeeksWaveform]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testClippedInactiveRegionCanStillBeSelected]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testClippedInactiveRegionCanStillBeSelected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testInvalidClickFallsBackToSeek]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testInvalidClickFallsBackToSeek]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testOverlapUsesTopmostLatestRenderedInactiveRegion]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testOverlapUsesTopmostLatestRenderedInactiveRegion]' passed (0.000 seconds).
+Test Suite 'MultiRegionWaveformHitTestingTests' passed at 2026-11-01 16:32:00.727.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.001 (0.002) seconds
+Test Suite 'DJAnthemMapperTests.xctest' passed at 2026-11-01 16:32:00.727.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.001 (0.002) seconds
+Test Suite 'Selected tests' passed at 2026-11-01 16:32:00.727.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.001 (0.002) seconds
+=== FROZEN M2 STRESS ===
+Building for debugging...
+Build complete! (0.23 secs)
+Test Suite 'Selected tests' started at 2026-11-01 16:32:01.771.
+Test Suite 'DJAnthemMapperTests.xctest' started at 2026-11-01 16:32:01.772.
+Test Suite 'MultiRegionStressTests' started at 2026-11-01 16:32:01.772.
+Test Case '-[DJAnthemMapperTests.MultiRegionStressTests testCertifiedZoomsWithManyOverlapsStayWithinViewport]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionStressTests testCertifiedZoomsWithManyOverlapsStayWithinViewport]' passed (0.001 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionStressTests testDeleteAndReaddStressMaintainsValidActiveIdentity]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionStressTests testDeleteAndReaddStressMaintainsValidActiveIdentity]' passed (0.001 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionStressTests testHitTestingAcrossDenseOverlapIsDeterministic]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionStressTests testHitTestingAcrossDenseOverlapIsDeterministic]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionStressTests testHundredRegionsGeometryRemainsFiniteAndOrdered]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionStressTests testHundredRegionsGeometryRemainsFiniteAndOrdered]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionStressTests testRepeatedActiveSwitchingNeverMutatesRegionData]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionStressTests testRepeatedActiveSwitchingNeverMutatesRegionData]' passed (0.002 seconds).
+Test Suite 'MultiRegionStressTests' passed at 2026-11-01 16:32:01.776.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.004 (0.004) seconds
+Test Suite 'DJAnthemMapperTests.xctest' passed at 2026-11-01 16:32:01.776.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.004 (0.004) seconds
+Test Suite 'Selected tests' passed at 2026-11-01 16:32:01.776.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.004 (0.005) seconds
+=== FROZEN PHASE 4B ===
+Building for debugging...
+[1 / 5]
+Build complete! (0.37 secs)
+Test Suite 'Selected tests' started at 2026-11-01 16:32:02.959.
+Test Suite 'DJAnthemMapperTests.xctest' started at 2026-11-01 16:32:02.960.
+Test Suite 'Phase4BRegressionTests' started at 2026-11-01 16:32:02.960.
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testAnthemRegionValidityAndDuration]' started.
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testAnthemRegionValidityAndDuration]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testControllerNormalisesMillisecondsAndRejectsInvalidOrder]' started.
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testControllerNormalisesMillisecondsAndRejectsInvalidOrder]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testControllerNudgesBothMarkers]' started.
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testControllerNudgesBothMarkers]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testExplicitBoundedPlaybackModesExist]' started.
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testExplicitBoundedPlaybackModesExist]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testOverlayClipsRegionToVisibleWindow]' started.
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testOverlayClipsRegionToVisibleWindow]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testOverlayGeometryUsesViewportCoordinates]' started.
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testOverlayGeometryUsesViewportCoordinates]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testRegionBoundsValidation]' started.
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testRegionBoundsValidation]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testViewportHalfSecondPrecisionAndClamping]' started.
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testViewportHalfSecondPrecisionAndClamping]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testViewportRoundTripAcrossZoomDurations]' started.
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testViewportRoundTripAcrossZoomDurations]' passed (0.000 seconds).
+Test Suite 'Phase4BRegressionTests' passed at 2026-11-01 16:32:02.962.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.002 (0.002) seconds
+Test Suite 'DJAnthemMapperTests.xctest' passed at 2026-11-01 16:32:02.962.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.002 (0.002) seconds
+Test Suite 'Selected tests' passed at 2026-11-01 16:32:02.962.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.002 (0.003) seconds
+=== FULL REGRESSION SUITE ===
+Building for debugging...
+Build complete! (0.23 secs)
+Test Suite 'All tests' started at 2026-11-01 16:32:03.946.
+Test Suite 'DJAnthemMapperTests.xctest' started at 2026-11-01 16:32:03.947.
+Test Suite 'AnthemMapControllerRestorationTests' started at 2026-11-01 16:32:03.947.
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testDuplicateUUIDsAreRejectedWithoutMutation]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testDuplicateUUIDsAreRejectedWithoutMutation]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testEightRegionsRestore]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testEightRegionsRestore]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testEmptyRestorationIsRejectedWithoutMutation]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testEmptyRestorationIsRejectedWithoutMutation]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testFirstRestoredRegionBecomesActive]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testFirstRestoredRegionBecomesActive]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testInvalidLiveRegionIsRejectedWithoutMutation]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testInvalidLiveRegionIsRejectedWithoutMutation]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testRestorationReplacesExistingRegions]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testRestorationReplacesExistingRegions]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testStableUUIDsArePreserved]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testStableUUIDsArePreserved]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testSuccessfulRestoreClearsValidationMessage]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testSuccessfulRestoreClearsValidationMessage]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testTimingsArePreserved]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapControllerRestorationTests testTimingsArePreserved]' passed (0.000 seconds).
+Test Suite 'AnthemMapControllerRestorationTests' passed at 2026-11-01 16:32:03.949.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.001 (0.002) seconds
+Test Suite 'AnthemMapDocumentTests' started at 2026-11-01 16:32:03.949.
+Test Case '-[DJAnthemMapperTests.AnthemMapDocumentTests testBeyondTrackRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapDocumentTests testBeyondTrackRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapDocumentTests testConstructorCapsAtEightRegions]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapDocumentTests testConstructorCapsAtEightRegions]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapDocumentTests testCurrentFormatVersionIsOne]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapDocumentTests testCurrentFormatVersionIsOne]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapDocumentTests testDuplicateIDsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapDocumentTests testDuplicateIDsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapDocumentTests testDuplicateSlotsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapDocumentTests testDuplicateSlotsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapDocumentTests testInvalidOrderRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapDocumentTests testInvalidOrderRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapDocumentTests testJSONRoundTripPreservesStableIdentityAndTiming]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapDocumentTests testJSONRoundTripPreservesStableIdentityAndTiming]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapDocumentTests testMaximumRegionCountMatchesCertifiedM2Limit]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapDocumentTests testMaximumRegionCountMatchesCertifiedM2Limit]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapDocumentTests testValidDocument]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapDocumentTests testValidDocument]' passed (0.000 seconds).
+Test Suite 'AnthemMapDocumentTests' passed at 2026-11-01 16:32:03.950.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'AnthemMapLoadedMediaIdentityBuilderTests' started at 2026-11-01 16:32:03.950.
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testBridgeMatchesDirectCertifiedBuilderOutput]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testBridgeMatchesDirectCertifiedBuilderOutput]' passed (0.002 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testDurationUsesExistingBuilderRoundingPolicy]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testDurationUsesExistingBuilderRoundingPolicy]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testExistingSourceFileSizeIsCapturedExactly]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testExistingSourceFileSizeIsCapturedExactly]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testIdentityBuildingDoesNotModifySourceFile]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testIdentityBuildingDoesNotModifySourceFile]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testM4AUsesOriginalSourceIdentity]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testM4AUsesOriginalSourceIdentity]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testMKVUsesOriginalSourceIdentity]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testMKVUsesOriginalSourceIdentity]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testMP3UsesOriginalSourceIdentity]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testMP3UsesOriginalSourceIdentity]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testMP4UsesOriginalSourceIdentity]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testMP4UsesOriginalSourceIdentity]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testNoLoadedMediaThrowsNoLoadedMedia]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testNoLoadedMediaThrowsNoLoadedMedia]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testNonFiniteDurationPropagatesTypedIdentityFailure]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testNonFiniteDurationPropagatesTypedIdentityFailure]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testWAVUsesOriginalSourceIdentity]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testWAVUsesOriginalSourceIdentity]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testZeroDurationPropagatesTypedIdentityFailure]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapLoadedMediaIdentityBuilderTests testZeroDurationPropagatesTypedIdentityFailure]' passed (0.000 seconds).
+Test Suite 'AnthemMapLoadedMediaIdentityBuilderTests' passed at 2026-11-01 16:32:03.956.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 0.005 (0.005) seconds
+Test Suite 'AnthemMapOpenCoordinatorTests' started at 2026-11-01 16:32:03.956.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testDurationMismatchPreventsRestoration]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testDurationMismatchPreventsRestoration]' passed (0.001 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testFilenameMismatchPreventsRestoration]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testFilenameMismatchPreventsRestoration]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testFileSizeMismatchPreventsRestoration]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testFileSizeMismatchPreventsRestoration]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testInvalidDocumentFailsWithoutControllerMutation]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testInvalidDocumentFailsWithoutControllerMutation]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testMalformedMapFailsWithoutControllerMutation]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testMalformedMapFailsWithoutControllerMutation]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testMissingMapFailsWithoutControllerMutation]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testMissingMapFailsWithoutControllerMutation]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testMultipleMismatchReasonsArePreserved]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testMultipleMismatchReasonsArePreserved]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testResetReturnsStatusToIdle]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testResetReturnsStatusToIdle]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testSuccessSetsOpenedStatus]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testSuccessSetsOpenedStatus]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testUUIDAndTimingArePreservedEndToEnd]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testUUIDAndTimingArePreservedEndToEnd]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testValidMapAndMatchingTrackRestoresSuccessfully]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenCoordinatorTests testValidMapAndMatchingTrackRestoresSuccessfully]' passed (0.000 seconds).
+Test Suite 'AnthemMapOpenCoordinatorTests' passed at 2026-11-01 16:32:03.960.
+	 Executed 11 tests, with 0 failures (0 unexpected) in 0.004 (0.005) seconds
+Test Suite 'AnthemMapOpenPanelConfigurationTests' started at 2026-11-01 16:32:03.960.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenPanelConfigurationTests testDirectoriesCannotBeSelected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenPanelConfigurationTests testDirectoriesCannotBeSelected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenPanelConfigurationTests testExtensionIsAnthemMap]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenPanelConfigurationTests testExtensionIsAnthemMap]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenPanelConfigurationTests testExtensionUsesSharedSuggestedFilenameConstant]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenPanelConfigurationTests testExtensionUsesSharedSuggestedFilenameConstant]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenPanelConfigurationTests testFilesCanBeSelected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenPanelConfigurationTests testFilesCanBeSelected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenPanelConfigurationTests testMultipleSelectionIsDisabled]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenPanelConfigurationTests testMultipleSelectionIsDisabled]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenPanelConfigurationTests testRepeatedConfigurationCreationIsDeterministic]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapOpenPanelConfigurationTests testRepeatedConfigurationCreationIsDeterministic]' passed (0.000 seconds).
+Test Suite 'AnthemMapOpenPanelConfigurationTests' passed at 2026-11-01 16:32:03.961.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'AnthemMapReadEngineTests' started at 2026-11-01 16:32:03.961.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testDuplicateSlotIsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testDuplicateSlotIsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testDuplicateUUIDIsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testDuplicateUUIDIsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testIdentitySlotAndTimingArePreserved]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testIdentitySlotAndTimingArePreserved]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testInvalidRegionOrderingIsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testInvalidRegionOrderingIsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testInvalidTrackDurationIsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testInvalidTrackDurationIsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testLoadDoesNotModifySourceFile]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testLoadDoesNotModifySourceFile]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testMalformedJSONIsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testMalformedJSONIsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testMissingFileIsReadFailure]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testMissingFileIsReadFailure]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testMultipleRegionOrderingIsPreserved]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testMultipleRegionOrderingIsPreserved]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testRegionBeyondTrackIsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testRegionBeyondTrackIsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testUnsupportedFormatVersionIsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testUnsupportedFormatVersionIsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testValidDocumentDecodesIdentically]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testValidDocumentDecodesIdentically]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testValidSavedFileLoadsIdentically]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapReadEngineTests testValidSavedFileLoadsIdentically]' passed (0.000 seconds).
+Test Suite 'AnthemMapReadEngineTests' passed at 2026-11-01 16:32:03.963.
+	 Executed 13 tests, with 0 failures (0 unexpected) in 0.002 (0.002) seconds
+Test Suite 'AnthemMapRestorationBuilderTests' started at 2026-11-01 16:32:03.963.
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testBuilderDoesNotMutateDocument]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testBuilderDoesNotMutateDocument]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testEightRegionsRestore]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testEightRegionsRestore]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testEmptyPersistentRegionListProducesEmptyRestorationList]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testEmptyPersistentRegionListProducesEmptyRestorationList]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testInvalidDocumentIsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testInvalidDocumentIsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testMillisecondPrecisionIsPreservedExactly]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testMillisecondPrecisionIsPreservedExactly]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testRestorationProducesCompleteValidRegions]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testRestorationProducesCompleteValidRegions]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testSingleRegionRestoresMillisecondsAsSeconds]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testSingleRegionRestoresMillisecondsAsSeconds]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testSlotOrderingControlsRestoredOrdering]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testSlotOrderingControlsRestoredOrdering]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testStableUUIDIsPreserved]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testStableUUIDIsPreserved]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testTrackIdentityIsPreservedExactly]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapRestorationBuilderTests testTrackIdentityIsPreservedExactly]' passed (0.000 seconds).
+Test Suite 'AnthemMapRestorationBuilderTests' passed at 2026-11-01 16:32:03.964.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'AnthemMapSaveCoordinatorTests' started at 2026-11-01 16:32:03.964.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testIncompleteFinalRegionIsOmittedFromPreparedDocument]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testIncompleteFinalRegionIsOmittedFromPreparedDocument]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testIneligiblePreparationThrowsNotEligible]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testIneligiblePreparationThrowsNotEligible]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testInitialStateIsIdleAndNotSaveable]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testInitialStateIsIdleAndNotSaveable]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testInvalidReevaluationClearsPreparedSaveAndDisablesSave]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testInvalidReevaluationClearsPreparedSaveAndDisablesSave]' passed (0.001 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testInvalidTrackDurationIsNotSaveable]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testInvalidTrackDurationIsNotSaveable]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testMissingMediaIsNotSaveable]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testMissingMediaIsNotSaveable]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testNoCompleteRegionIsNotSaveable]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testNoCompleteRegionIsNotSaveable]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testPreparationDoesNotMutateInputRegions]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testPreparationDoesNotMutateInputRegions]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testPreparedDocumentContainsCorrectRegion]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testPreparedDocumentContainsCorrectRegion]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testPreparedTrackIdentityIsCorrect]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testPreparedTrackIdentityIsCorrect]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testReevaluationClearsPreviouslyPreparedSave]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testReevaluationClearsPreviouslyPreparedSave]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testRegionUUIDsAndSlotsArePreserved]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testRegionUUIDsAndSlotsArePreserved]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testResetReturnsCoordinatorToInitialState]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testResetReturnsCoordinatorToInitialState]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testSuggestedFilenameComesFromB4]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testSuggestedFilenameComesFromB4]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testValidEditorStateEvaluatesReady]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testValidEditorStateEvaluatesReady]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testValidStatePreparesSuccessfully]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveCoordinatorTests testValidStatePreparesSuccessfully]' passed (0.000 seconds).
+Test Suite 'AnthemMapSaveCoordinatorTests' passed at 2026-11-01 16:32:03.968.
+	 Executed 16 tests, with 0 failures (0 unexpected) in 0.003 (0.004) seconds
+Test Suite 'AnthemMapSaveEligibilityTests' started at 2026-11-01 16:32:03.968.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEligibilityTests testCompleteInvalidRegionBlocksOtherwiseValidSave]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEligibilityTests testCompleteInvalidRegionBlocksOtherwiseValidSave]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEligibilityTests testEndOnlyBlocksSaveWhenItIsOnlyRegion]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEligibilityTests testEndOnlyBlocksSaveWhenItIsOnlyRegion]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEligibilityTests testEvaluationDoesNotMutateRegionDataOrIdentity]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEligibilityTests testEvaluationDoesNotMutateRegionDataOrIdentity]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEligibilityTests testMoreThanEightRegionsBlocksSave]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEligibilityTests testMoreThanEightRegionsBlocksSave]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEligibilityTests testNegativeDurationBlocksSave]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEligibilityTests testNegativeDurationBlocksSave]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEligibilityTests testNoCompleteRegionBlocksSave]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEligibilityTests testNoCompleteRegionBlocksSave]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEligibilityTests testNoLoadedMediaBlocksSave]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEligibilityTests testNoLoadedMediaBlocksSave]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEligibilityTests testNonFiniteDurationBlocksSave]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEligibilityTests testNonFiniteDurationBlocksSave]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEligibilityTests testOneCompleteValidRegionEnablesSave]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEligibilityTests testOneCompleteValidRegionEnablesSave]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEligibilityTests testStartOnlyBlocksSaveWhenItIsOnlyRegion]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEligibilityTests testStartOnlyBlocksSaveWhenItIsOnlyRegion]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEligibilityTests testValidRegionPlusPartialFinalRegionCanSave]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEligibilityTests testValidRegionPlusPartialFinalRegionCanSave]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEligibilityTests testValidRegionsPlusEmptyFinalRegionCanSave]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEligibilityTests testValidRegionsPlusEmptyFinalRegionCanSave]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEligibilityTests testZeroDurationBlocksSave]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEligibilityTests testZeroDurationBlocksSave]' passed (0.000 seconds).
+Test Suite 'AnthemMapSaveEligibilityTests' passed at 2026-11-01 16:32:03.969.
+	 Executed 13 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'AnthemMapSaveEngineTests' started at 2026-11-01 16:32:03.969.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEngineTests testDeterministicJSONOutput]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEngineTests testDeterministicJSONOutput]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEngineTests testEightRegionConversion]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEngineTests testEightRegionConversion]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEngineTests testExistingFileIsAtomicallyReplaced]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEngineTests testExistingFileIsAtomicallyReplaced]' passed (0.001 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEngineTests testFailedSaveDoesNotCorruptExistingGoodFile]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEngineTests testFailedSaveDoesNotCorruptExistingGoodFile]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEngineTests testIncompleteRegionIsOmittedButSlotPositionIsPreserved]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEngineTests testIncompleteRegionIsOmittedButSlotPositionIsPreserved]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEngineTests testInvalidDocumentIsRefusedBeforeWriting]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEngineTests testInvalidDocumentIsRefusedBeforeWriting]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEngineTests testMillisecondConversionUsesRounding]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEngineTests testMillisecondConversionUsesRounding]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEngineTests testMoreThanEightLiveRegionsIsRefusedWithoutTruncation]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEngineTests testMoreThanEightLiveRegionsIsRefusedWithoutTruncation]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEngineTests testSavedJSONDecodesBackIdentically]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEngineTests testSavedJSONDecodesBackIdentically]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEngineTests testSingleRegionConversion]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEngineTests testSingleRegionConversion]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEngineTests testStableUUIDPreservation]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEngineTests testStableUUIDPreservation]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEngineTests testSuccessfulFileCreation]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEngineTests testSuccessfulFileCreation]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEngineTests testTrackMetadataPreservation]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveEngineTests testTrackMetadataPreservation]' passed (0.000 seconds).
+Test Suite 'AnthemMapSaveEngineTests' passed at 2026-11-01 16:32:03.972.
+	 Executed 13 tests, with 0 failures (0 unexpected) in 0.002 (0.003) seconds
+Test Suite 'AnthemMapSaveExecutorTests' started at 2026-11-01 16:32:03.972.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveExecutorTests testExecutionCreatesFileAtSelectedDestination]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveExecutorTests testExecutionCreatesFileAtSelectedDestination]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveExecutorTests testExecutionPreservesPreparedSave]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveExecutorTests testExecutionPreservesPreparedSave]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveExecutorTests testExecutionPreservesStableRegionUUIDAndSlot]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveExecutorTests testExecutionPreservesStableRegionUUIDAndSlot]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveExecutorTests testExistingFileIsReplacedAtomically]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveExecutorTests testExistingFileIsReplacedAtomically]' passed (0.001 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveExecutorTests testSavedDocumentDecodesIdentically]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveExecutorTests testSavedDocumentDecodesIdentically]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveExecutorTests testWriteFailureIsPropagated]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveExecutorTests testWriteFailureIsPropagated]' passed (0.000 seconds).
+Test Suite 'AnthemMapSaveExecutorTests' passed at 2026-11-01 16:32:03.975.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.003 (0.003) seconds
+Test Suite 'AnthemMapSavePanelConfigurationTests' started at 2026-11-01 16:32:03.975.
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testConfigurationCreationDoesNotMutatePreparedSave]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testConfigurationCreationDoesNotMutatePreparedSave]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testConfigurationDoesNotDeriveExtensionFromSuggestedFilename]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testConfigurationDoesNotDeriveExtensionFromSuggestedFilename]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testConfigurationPreservesFilenameSpaces]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testConfigurationPreservesFilenameSpaces]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testConfigurationPreservesMultipleDots]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testConfigurationPreservesMultipleDots]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testConfigurationUsesPreparedSuggestedFilename]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testConfigurationUsesPreparedSuggestedFilename]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testDirectoriesCanBeCreated]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testDirectoriesCanBeCreated]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testEmptySuggestedFilenameIsPreservedWithoutConfigurationMutation]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testEmptySuggestedFilenameIsPreservedWithoutConfigurationMutation]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testExtensionIsVisible]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testExtensionIsVisible]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testFilenameAlreadyUsingAnthemMapExtensionIsPreservedExactly]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testFilenameAlreadyUsingAnthemMapExtensionIsPreservedExactly]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testFilenameContainingMultipleExtensionLikeSegmentsIsPreserved]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testFilenameContainingMultipleExtensionLikeSegmentsIsPreserved]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testLeadingAndTrailingFilenameSpacesAreNotSilentlyRewritten]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testLeadingAndTrailingFilenameSpacesAreNotSilentlyRewritten]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testOtherFileTypesAreNotAllowed]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testOtherFileTypesAreNotAllowed]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testRequiredExtensionIsAnthemMap]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testRequiredExtensionIsAnthemMap]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testRequiredExtensionMatchesB4Constant]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testRequiredExtensionMatchesB4Constant]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testTwoConfigurationsFromSamePreparedSaveAreEqual]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testTwoConfigurationsFromSamePreparedSaveAreEqual]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testUppercaseFilenameIsPreservedExactly]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSavePanelConfigurationTests testUppercaseFilenameIsPreservedExactly]' passed (0.000 seconds).
+Test Suite 'AnthemMapSavePanelConfigurationTests' passed at 2026-11-01 16:32:03.977.
+	 Executed 16 tests, with 0 failures (0 unexpected) in 0.001 (0.002) seconds
+Test Suite 'AnthemMapSaveRequestBuilderTests' started at 2026-11-01 16:32:03.977.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testBuildingRequestDoesNotAlterMarkerValues]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testBuildingRequestDoesNotAlterMarkerValues]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testBuildingRequestDoesNotMutateRegions]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testBuildingRequestDoesNotMutateRegions]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testBuildingRequestDoesNotReplaceUUIDs]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testBuildingRequestDoesNotReplaceUUIDs]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testControllerNormalisedTimingSurvivesPersistence]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testControllerNormalisedTimingSurvivesPersistence]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testEightRegionsAreAccepted]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testEightRegionsAreAccepted]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testEmptyFinalRegionIsOmittedBySaveEngine]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testEmptyFinalRegionIsOmittedBySaveEngine]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testEmptyFinalRegionIsPreservedInRequest]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testEmptyFinalRegionIsPreservedInRequest]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testEmptyRegionArrayIsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testEmptyRegionArrayIsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testEndOnlyFinalRegionIsPreservedInRequest]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testEndOnlyFinalRegionIsPreservedInRequest]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testMultipleRegionOrderingIsPreserved]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testMultipleRegionOrderingIsPreserved]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testNineRegionsAreRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testNineRegionsAreRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testOneValidRegionProducesSaveRequest]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testOneValidRegionProducesSaveRequest]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testOnlyEmptyRegionIsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testOnlyEmptyRegionIsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testOnlyEndOnlyRegionIsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testOnlyEndOnlyRegionIsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testOnlyStartOnlyRegionIsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testOnlyStartOnlyRegionIsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testPartialFinalRegionIsOmittedBySaveEngine]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testPartialFinalRegionIsOmittedBySaveEngine]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testRequestProducesValidPersistentDocument]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testRequestProducesValidPersistentDocument]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testStableRegionUUIDIsPreserved]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testStableRegionUUIDIsPreserved]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testStartOnlyFinalRegionIsPreservedInRequest]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testStartOnlyFinalRegionIsPreservedInRequest]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testTrackIdentityIsPreservedExactly]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSaveRequestBuilderTests testTrackIdentityIsPreservedExactly]' passed (0.000 seconds).
+Test Suite 'AnthemMapSaveRequestBuilderTests' passed at 2026-11-01 16:32:03.979.
+	 Executed 20 tests, with 0 failures (0 unexpected) in 0.002 (0.003) seconds
+Test Suite 'AnthemMapSuggestedFileNameTests' started at 2026-11-01 16:32:03.979.
+Test Case '-[DJAnthemMapperTests.AnthemMapSuggestedFileNameTests testM4ABecomesAnthemMap]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSuggestedFileNameTests testM4ABecomesAnthemMap]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSuggestedFileNameTests testMKVBecomesAnthemMap]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSuggestedFileNameTests testMKVBecomesAnthemMap]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSuggestedFileNameTests testMP3BecomesAnthemMap]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSuggestedFileNameTests testMP3BecomesAnthemMap]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSuggestedFileNameTests testMP4BecomesAnthemMap]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSuggestedFileNameTests testMP4BecomesAnthemMap]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSuggestedFileNameTests testNoSourceExtensionGetsAnthemMapExtension]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSuggestedFileNameTests testNoSourceExtensionGetsAnthemMapExtension]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSuggestedFileNameTests testOnlyFinalExtensionIsReplaced]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSuggestedFileNameTests testOnlyFinalExtensionIsReplaced]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSuggestedFileNameTests testParentPathIsNotIncluded]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSuggestedFileNameTests testParentPathIsNotIncluded]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSuggestedFileNameTests testUnicodeAndSpacesArePreserved]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSuggestedFileNameTests testUnicodeAndSpacesArePreserved]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSuggestedFileNameTests testUppercaseSourceExtensionIsHandled]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSuggestedFileNameTests testUppercaseSourceExtensionIsHandled]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapSuggestedFileNameTests testWhitespaceStemUsesSafeFallback]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapSuggestedFileNameTests testWhitespaceStemUsesSafeFallback]' passed (0.000 seconds).
+Test Suite 'AnthemMapSuggestedFileNameTests' passed at 2026-11-01 16:32:03.981.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'AnthemMapTrackIdentityBuilderTests' started at 2026-11-01 16:32:03.981.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testBuilderDoesNotRequireSourceFileToExist]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testBuilderDoesNotRequireSourceFileToExist]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testBuiltIdentityProducesValidM3Document]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testBuiltIdentityProducesValidM3Document]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testDurationConvertsExactlyToMilliseconds]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testDurationConvertsExactlyToMilliseconds]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testDurationUsesM3RoundingPolicy]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testDurationUsesM3RoundingPolicy]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testEmptyFilenameIsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testEmptyFilenameIsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testExistingFileSizeIsCapturedExactly]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testExistingFileSizeIsCapturedExactly]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testIdentityBuildingDoesNotModifySourceFile]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testIdentityBuildingDoesNotModifySourceFile]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testInfiniteDurationIsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testInfiniteDurationIsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testM4AFilenameIsPreserved]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testM4AFilenameIsPreserved]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testMKVFilenameIsPreserved]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testMKVFilenameIsPreserved]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testMP3FilenameIsPreserved]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testMP3FilenameIsPreserved]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testMP4FilenameIsPreserved]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testMP4FilenameIsPreserved]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testNaNDurationIsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testNaNDurationIsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testNegativeDurationIsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testNegativeDurationIsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testOnlyLastPathComponentIsStored]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testOnlyLastPathComponentIsStored]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testSameInputProducesEqualTrackIdentity]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testSameInputProducesEqualTrackIdentity]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testUnavailableFileSizeProducesNil]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testUnavailableFileSizeProducesNil]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testWhitespaceOnlyFilenameIsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testWhitespaceOnlyFilenameIsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testZeroByteFileProducesZeroFileSize]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testZeroByteFileProducesZeroFileSize]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testZeroDurationIsRejected]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackIdentityBuilderTests testZeroDurationIsRejected]' passed (0.000 seconds).
+Test Suite 'AnthemMapTrackIdentityBuilderTests' passed at 2026-11-01 16:32:03.984.
+	 Executed 20 tests, with 0 failures (0 unexpected) in 0.002 (0.003) seconds
+Test Suite 'AnthemMapTrackMatcherTests' started at 2026-11-01 16:32:03.984.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testActualNilFileSizeDoesNotCauseMismatch]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testActualNilFileSizeDoesNotCauseMismatch]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testAllMismatchesAreReportedTogether]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testAllMismatchesAreReportedTogether]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testBothNilFileSizesMatch]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testBothNilFileSizesMatch]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testComparisonDoesNotMutateIdentities]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testComparisonDoesNotMutateIdentities]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testDurationMismatchIsReported]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testDurationMismatchIsReported]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testExpectedNilFileSizeDoesNotCauseMismatch]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testExpectedNilFileSizeDoesNotCauseMismatch]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testFilenameExtensionParticipatesInComparison]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testFilenameExtensionParticipatesInComparison]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testFilenameMismatchIsReported]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testFilenameMismatchIsReported]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testFilenameSpacesAreComparedExactly]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testFilenameSpacesAreComparedExactly]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testFileSizeMismatchIsReported]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testFileSizeMismatchIsReported]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testIdenticalIdentitiesMatch]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testIdenticalIdentitiesMatch]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testSameInputsProduceSameResult]' started.
+Test Case '-[DJAnthemMapperTests.AnthemMapTrackMatcherTests testSameInputsProduceSameResult]' passed (0.000 seconds).
+Test Suite 'AnthemMapTrackMatcherTests' passed at 2026-11-01 16:32:03.985.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'AnthemRegionActiveBridgeTests' started at 2026-11-01 16:32:03.985.
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testAddingAndSwitchingKeepsRegionsIndependent]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testAddingAndSwitchingKeepsRegionsIndependent]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testDeletingActiveSelectsValidNeighbour]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testDeletingActiveSelectsValidNeighbour]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testDeletingOnlyRegionClearsAndKeepsIdentity]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testDeletingOnlyRegionClearsAndKeepsIdentity]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testExistingRegionMigratesToActiveRegionA]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testExistingRegionMigratesToActiveRegionA]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testNudgeChangesOnlyActiveRegion]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testNudgeChangesOnlyActiveRegion]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testResetForNewTrackReturnsToFreshA]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testResetForNewTrackReturnsToFreshA]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testUnknownRegionCannotBeSelectedOrDeleted]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionActiveBridgeTests testUnknownRegionCannotBeSelectedOrDeleted]' passed (0.000 seconds).
+Test Suite 'AnthemRegionActiveBridgeTests' passed at 2026-11-01 16:32:03.986.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'AnthemRegionCollectionTests' started at 2026-11-01 16:32:03.986.
+Test Case '-[DJAnthemMapperTests.AnthemRegionCollectionTests testAddingRegionsCreatesStableIdentities]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionCollectionTests testAddingRegionsCreatesStableIdentities]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionCollectionTests testDeletingMiddlePreservesOtherIDs]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionCollectionTests testDeletingMiddlePreservesOtherIDs]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionCollectionTests testDeletingOnlyRegionClearsIt]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionCollectionTests testDeletingOnlyRegionClearsIt]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionCollectionTests testDuplicateIdentifiersAreDeduplicated]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionCollectionTests testDuplicateIdentifiersAreDeduplicated]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionCollectionTests testExistingSingleRegionBecomesRegionA]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionCollectionTests testExistingSingleRegionBecomesRegionA]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionCollectionTests testInitialCollectionContainsOneEmptyRegion]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionCollectionTests testInitialCollectionContainsOneEmptyRegion]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionCollectionTests testLabelsContinueAfterZ]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionCollectionTests testLabelsContinueAfterZ]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionCollectionTests testNewTrackResetCreatesFreshA]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionCollectionTests testNewTrackResetCreatesFreshA]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionCollectionTests testRegionsRemainIndependent]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionCollectionTests testRegionsRemainIndependent]' passed (0.000 seconds).
+Test Suite 'AnthemRegionCollectionTests' passed at 2026-11-01 16:32:03.987.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'AnthemRegionControllerTests' started at 2026-11-01 16:32:03.987.
+Test Case '-[DJAnthemMapperTests.AnthemRegionControllerTests testBoundaryRules]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionControllerTests testBoundaryRules]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionControllerTests testBoundsAndNonFiniteValues]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionControllerTests testBoundsAndNonFiniteValues]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionControllerTests testClearAndNewTrackReset]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionControllerTests testClearAndNewTrackReset]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionControllerTests testInitialState]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionControllerTests testInitialState]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionControllerTests testInvalidEndIsNonDestructive]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionControllerTests testInvalidEndIsNonDestructive]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionControllerTests testInvalidStartIsNonDestructive]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionControllerTests testInvalidStartIsNonDestructive]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionControllerTests testMillisecondNormalisation]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionControllerTests testMillisecondNormalisation]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionControllerTests testStartOnlyAndEndOnlyAreAllowed]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionControllerTests testStartOnlyAndEndOnlyAreAllowed]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionControllerTests testValidRegionAndDuration]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionControllerTests testValidRegionAndDuration]' passed (0.000 seconds).
+Test Suite 'AnthemRegionControllerTests' passed at 2026-11-01 16:32:03.988.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'AnthemRegionOverlayGeometryTests' started at 2026-11-01 16:32:03.988.
+Test Case '-[DJAnthemMapperTests.AnthemRegionOverlayGeometryTests testBothMarkersVisible]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionOverlayGeometryTests testBothMarkersVisible]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionOverlayGeometryTests testEndVisibleStartOffscreen]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionOverlayGeometryTests testEndVisibleStartOffscreen]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionOverlayGeometryTests testInvalidRegionHasNoShading]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionOverlayGeometryTests testInvalidRegionHasNoShading]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionOverlayGeometryTests testInvalidViewportReturnsEmptyLayout]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionOverlayGeometryTests testInvalidViewportReturnsEmptyLayout]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionOverlayGeometryTests testOffscreenMarkersAreNotClamped]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionOverlayGeometryTests testOffscreenMarkersAreNotClamped]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionOverlayGeometryTests testStartVisibleEndOffscreen]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionOverlayGeometryTests testStartVisibleEndOffscreen]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionOverlayGeometryTests testViewportEntirelyInsideRegion]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionOverlayGeometryTests testViewportEntirelyInsideRegion]' passed (0.000 seconds).
+Test Suite 'AnthemRegionOverlayGeometryTests' passed at 2026-11-01 16:32:03.989.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'AnthemRegionSelectionHardeningTests' started at 2026-11-01 16:32:03.989.
+Test Case '-[DJAnthemMapperTests.AnthemRegionSelectionHardeningTests testAddWithoutActivationPreservesActiveRegion]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionSelectionHardeningTests testAddWithoutActivationPreservesActiveRegion]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionSelectionHardeningTests testClearAffectsOnlyActiveRegion]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionSelectionHardeningTests testClearAffectsOnlyActiveRegion]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionSelectionHardeningTests testDeletingFirstActiveChoosesFollowingRegionWithoutMutation]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionSelectionHardeningTests testDeletingFirstActiveChoosesFollowingRegionWithoutMutation]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionSelectionHardeningTests testDeletingLastActiveChoosesPreviousRemainingRegion]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionSelectionHardeningTests testDeletingLastActiveChoosesPreviousRemainingRegion]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionSelectionHardeningTests testDeletingNonActiveRegionDoesNotChangeActiveRegion]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionSelectionHardeningTests testDeletingNonActiveRegionDoesNotChangeActiveRegion]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionSelectionHardeningTests testInvalidSelectionIsNonDestructive]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionSelectionHardeningTests testInvalidSelectionIsNonDestructive]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.AnthemRegionSelectionHardeningTests testRepeatedSwitchingDoesNotMutateEitherRegion]' started.
+Test Case '-[DJAnthemMapperTests.AnthemRegionSelectionHardeningTests testRepeatedSwitchingDoesNotMutateEitherRegion]' passed (0.000 seconds).
+Test Suite 'AnthemRegionSelectionHardeningTests' passed at 2026-11-01 16:32:03.990.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'EditorShortcutDecisionTests' started at 2026-11-01 16:32:03.990.
+Test Case '-[DJAnthemMapperTests.EditorShortcutDecisionTests testEditingProtectionWinsWhenNothingPlayable]' started.
+Test Case '-[DJAnthemMapperTests.EditorShortcutDecisionTests testEditingProtectionWinsWhenNothingPlayable]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.EditorShortcutDecisionTests testSpaceIgnoredWhileEditingText]' started.
+Test Case '-[DJAnthemMapperTests.EditorShortcutDecisionTests testSpaceIgnoredWhileEditingText]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.EditorShortcutDecisionTests testSpaceIgnoredWithoutPlayableMedia]' started.
+Test Case '-[DJAnthemMapperTests.EditorShortcutDecisionTests testSpaceIgnoredWithoutPlayableMedia]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.EditorShortcutDecisionTests testSpaceTogglesPlaybackWhenNotEditingAndPlayable]' started.
+Test Case '-[DJAnthemMapperTests.EditorShortcutDecisionTests testSpaceTogglesPlaybackWhenNotEditingAndPlayable]' passed (0.000 seconds).
+Test Suite 'EditorShortcutDecisionTests' passed at 2026-11-01 16:32:03.991.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'MultiRegionStressTests' started at 2026-11-01 16:32:03.991.
+Test Case '-[DJAnthemMapperTests.MultiRegionStressTests testCertifiedZoomsWithManyOverlapsStayWithinViewport]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionStressTests testCertifiedZoomsWithManyOverlapsStayWithinViewport]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionStressTests testDeleteAndReaddStressMaintainsValidActiveIdentity]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionStressTests testDeleteAndReaddStressMaintainsValidActiveIdentity]' passed (0.001 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionStressTests testHitTestingAcrossDenseOverlapIsDeterministic]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionStressTests testHitTestingAcrossDenseOverlapIsDeterministic]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionStressTests testHundredRegionsGeometryRemainsFiniteAndOrdered]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionStressTests testHundredRegionsGeometryRemainsFiniteAndOrdered]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionStressTests testRepeatedActiveSwitchingNeverMutatesRegionData]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionStressTests testRepeatedActiveSwitchingNeverMutatesRegionData]' passed (0.001 seconds).
+Test Suite 'MultiRegionStressTests' passed at 2026-11-01 16:32:03.994.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.003 (0.003) seconds
+Test Suite 'MultiRegionWaveformGeometryTests' started at 2026-11-01 16:32:03.994.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testChangingActiveIdentityDoesNotMutateRegionData]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testChangingActiveIdentityDoesNotMutateRegionData]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testChangingActiveRegionDoesNotChangeCoordinates]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testChangingActiveRegionDoesNotChangeCoordinates]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testCoordinateRoundTripAcrossCertifiedZoomScales]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testCoordinateRoundTripAcrossCertifiedZoomScales]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testExactlyOneMatchingRegionIsActive]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testExactlyOneMatchingRegionIsActive]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testFullyVisibleRegion]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testFullyVisibleRegion]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testGeometryCalculationDoesNotMutateCollection]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testGeometryCalculationDoesNotMutateCollection]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testHalfSecondViewportPrecision]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testHalfSecondViewportPrecision]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testIncompleteRegionsHaveNoShading]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testIncompleteRegionsHaveNoShading]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testInvalidRegionsHaveNoShading]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testInvalidRegionsHaveNoShading]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testLeftClippedRegion]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testLeftClippedRegion]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testOverlappingRegionsRemainIndependent]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testOverlappingRegionsRemainIndependent]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testRegionsEntirelyOffscreenHaveNoVisibleGeometry]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testRegionsEntirelyOffscreenHaveNoVisibleGeometry]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testRegionSpanningEntireViewport]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testRegionSpanningEntireViewport]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testRightClippedRegion]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testRightClippedRegion]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testSourceOrderingIsPreserved]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testSourceOrderingIsPreserved]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testThreeRegionsRemainSeparate]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformGeometryTests testThreeRegionsRemainSeparate]' passed (0.000 seconds).
+Test Suite 'MultiRegionWaveformGeometryTests' passed at 2026-11-01 16:32:03.996.
+	 Executed 16 tests, with 0 failures (0 unexpected) in 0.002 (0.002) seconds
+Test Suite 'MultiRegionWaveformHardeningTests' started at 2026-11-01 16:32:03.996.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHardeningTests testAllCertifiedZoomDurationsKeepCentredRegionGeometryStable]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHardeningTests testAllCertifiedZoomDurationsKeepCentredRegionGeometryStable]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHardeningTests testLeftClippingAtHalfSecondZoom]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHardeningTests testLeftClippingAtHalfSecondZoom]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHardeningTests testManyOverlappingRegionsPreserveSourceOrderAndGeometry]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHardeningTests testManyOverlappingRegionsPreserveSourceOrderAndGeometry]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHardeningTests testOffscreenRegionsRemainEmptyAtEveryZoom]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHardeningTests testOffscreenRegionsRemainEmptyAtEveryZoom]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHardeningTests testOverlapRemainsIndependentWhenBothClipped]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHardeningTests testOverlapRemainsIndependentWhenBothClipped]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHardeningTests testRegionSpanningHalfSecondViewportFillsViewport]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHardeningTests testRegionSpanningHalfSecondViewportFillsViewport]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHardeningTests testRightClippingAtHalfSecondZoom]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHardeningTests testRightClippingAtHalfSecondZoom]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHardeningTests testSwitchingActiveIdentityDoesNotChangeOverlapGeometry]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHardeningTests testSwitchingActiveIdentityDoesNotChangeOverlapGeometry]' passed (0.000 seconds).
+Test Suite 'MultiRegionWaveformHardeningTests' passed at 2026-11-01 16:32:03.997.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'MultiRegionWaveformHitTestingTests' started at 2026-11-01 16:32:03.997.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testActiveMarkerEndHasPriority]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testActiveMarkerEndHasPriority]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testActiveMarkerStartHasPriority]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testActiveMarkerStartHasPriority]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testActiveRegionBodyDoesNotReselectIt]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testActiveRegionBodyDoesNotReselectIt]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testClickInsideSingleInactiveRegionSelectsIt]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testClickInsideSingleInactiveRegionSelectsIt]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testClickOutsideAllRegionsSeeksWaveform]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testClickOutsideAllRegionsSeeksWaveform]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testClippedInactiveRegionCanStillBeSelected]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testClippedInactiveRegionCanStillBeSelected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testInvalidClickFallsBackToSeek]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testInvalidClickFallsBackToSeek]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testOverlapUsesTopmostLatestRenderedInactiveRegion]' started.
+Test Case '-[DJAnthemMapperTests.MultiRegionWaveformHitTestingTests testOverlapUsesTopmostLatestRenderedInactiveRegion]' passed (0.000 seconds).
+Test Suite 'MultiRegionWaveformHitTestingTests' passed at 2026-11-01 16:32:03.998.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'Phase4BRegressionTests' started at 2026-11-01 16:32:03.998.
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testAnthemRegionValidityAndDuration]' started.
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testAnthemRegionValidityAndDuration]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testControllerNormalisesMillisecondsAndRejectsInvalidOrder]' started.
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testControllerNormalisesMillisecondsAndRejectsInvalidOrder]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testControllerNudgesBothMarkers]' started.
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testControllerNudgesBothMarkers]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testExplicitBoundedPlaybackModesExist]' started.
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testExplicitBoundedPlaybackModesExist]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testOverlayClipsRegionToVisibleWindow]' started.
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testOverlayClipsRegionToVisibleWindow]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testOverlayGeometryUsesViewportCoordinates]' started.
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testOverlayGeometryUsesViewportCoordinates]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testRegionBoundsValidation]' started.
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testRegionBoundsValidation]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testViewportHalfSecondPrecisionAndClamping]' started.
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testViewportHalfSecondPrecisionAndClamping]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testViewportRoundTripAcrossZoomDurations]' started.
+Test Case '-[DJAnthemMapperTests.Phase4BRegressionTests testViewportRoundTripAcrossZoomDurations]' passed (0.000 seconds).
+Test Suite 'Phase4BRegressionTests' passed at 2026-11-01 16:32:04.000.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'PlaybackRegionValidationTests' started at 2026-11-01 16:32:04.000.
+Test Case '-[DJAnthemMapperTests.PlaybackRegionValidationTests testEqualAndReversedBoundariesRejected]' started.
+Test Case '-[DJAnthemMapperTests.PlaybackRegionValidationTests testEqualAndReversedBoundariesRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.PlaybackRegionValidationTests testNonFiniteRejected]' started.
+Test Case '-[DJAnthemMapperTests.PlaybackRegionValidationTests testNonFiniteRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.PlaybackRegionValidationTests testOutOfBoundsRejected]' started.
+Test Case '-[DJAnthemMapperTests.PlaybackRegionValidationTests testOutOfBoundsRejected]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.PlaybackRegionValidationTests testValidRegion]' started.
+Test Case '-[DJAnthemMapperTests.PlaybackRegionValidationTests testValidRegion]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.PlaybackRegionValidationTests testZeroDurationRejected]' started.
+Test Case '-[DJAnthemMapperTests.PlaybackRegionValidationTests testZeroDurationRejected]' passed (0.000 seconds).
+Test Suite 'PlaybackRegionValidationTests' passed at 2026-11-01 16:32:04.000.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'PrecisionFieldInputSanitiserTests' started at 2026-11-01 16:32:04.000.
+Test Case '-[DJAnthemMapperTests.PrecisionFieldInputSanitiserTests testInputIsLimitedToMaximumDigits]' started.
+Test Case '-[DJAnthemMapperTests.PrecisionFieldInputSanitiserTests testInputIsLimitedToMaximumDigits]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.PrecisionFieldInputSanitiserTests testIntentionalEmptyValueIsAllowed]' started.
+Test Case '-[DJAnthemMapperTests.PrecisionFieldInputSanitiserTests testIntentionalEmptyValueIsAllowed]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.PrecisionFieldInputSanitiserTests testInvalidInputWithEmptyPreviousValueRemainsEmpty]' started.
+Test Case '-[DJAnthemMapperTests.PrecisionFieldInputSanitiserTests testInvalidInputWithEmptyPreviousValueRemainsEmpty]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.PrecisionFieldInputSanitiserTests testLetterRestoresPreviousValue]' started.
+Test Case '-[DJAnthemMapperTests.PrecisionFieldInputSanitiserTests testLetterRestoresPreviousValue]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.PrecisionFieldInputSanitiserTests testMixedInputRetainsDigits]' started.
+Test Case '-[DJAnthemMapperTests.PrecisionFieldInputSanitiserTests testMixedInputRetainsDigits]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.PrecisionFieldInputSanitiserTests testNumericInputIsPreserved]' started.
+Test Case '-[DJAnthemMapperTests.PrecisionFieldInputSanitiserTests testNumericInputIsPreserved]' passed (0.000 seconds).
+Test Case '-[DJAnthemMapperTests.PrecisionFieldInputSanitiserTests testSpaceRestoresPreviousValue]' started.
+Test Case '-[DJAnthemMapperTests.PrecisionFieldInputSanitiserTests testSpaceRestoresPreviousValue]' passed (0.000 seconds).
+Test Suite 'PrecisionFieldInputSanitiserTests' passed at 2026-11-01 16:32:04.001.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'DJAnthemMapperTests.xctest' passed at 2026-11-01 16:32:04.001.
+	 Executed 297 tests, with 0 failures (0 unexpected) in 0.044 (0.054) seconds
+Test Suite 'All tests' passed at 2026-11-01 16:32:04.001.
+	 Executed 297 tests, with 0 failures (0 unexpected) in 0.044 (0.055) seconds
+◇ Test run started.
+↳ Testing Library Version: 2403
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.
+=== M3-03 FINAL CERTIFICATION PASSED ===
+Certification report: /Users/sutherland/Downloads/DJAnthemMapper/M3-03_FINAL_CERTIFICATION_20261101-163132.txt
+M3-03 Save/Open/track-match/region-restoration implementation and regression gates passed.
+Manual M3-03H end-to-end acceptance was completed separately by the user before this certification.
