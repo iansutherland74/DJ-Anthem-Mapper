@@ -254,7 +254,10 @@ struct ImportWorkspace: View {
             titleVisibility: .visible
         ) {
             Button("Save") {
-                resolvePendingChangeTrack(choice: .save)
+                Task { @MainActor in
+                    await Task.yield()
+                    resolvePendingChangeTrack(choice: .save)
+                }
             }
             Button("Discard Changes", role: .destructive) {
                 resolvePendingChangeTrack(choice: .discard)
@@ -424,7 +427,7 @@ struct ImportWorkspace: View {
             importError = "Drop an MP3, M4A, MP4, MKV or WAV media file."
             return false
         }
-        startImport(url)
+        requestProtectedChangeTrack(to: url)
         return true
     }
 
