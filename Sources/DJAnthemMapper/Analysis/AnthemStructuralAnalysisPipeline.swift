@@ -2,11 +2,14 @@ import Foundation
 
 struct AnthemStructuralAnalysisConfiguration: Equatable, Sendable {
     var candidateConfiguration = AnthemAnalysisConfiguration()
+    var provisionalCandidateCount: Int = 20
     var repetitionConfiguration = AnthemRepetitionConfiguration()
     var compositeConfiguration = AnthemCompositeScoringConfiguration()
 
     var isValid: Bool {
         candidateConfiguration.isValid &&
+        provisionalCandidateCount > 0 &&
+        provisionalCandidateCount >= candidateConfiguration.maximumCandidateCount &&
         repetitionConfiguration.isValid &&
         compositeConfiguration.isValid
     }
@@ -50,7 +53,7 @@ enum AnthemStructuralAnalysisPipeline {
         let candidates = AnthemCandidateScorer.rankedCandidates(
             from: frames,
             preferredDuration: configuration.candidateConfiguration.preferredCandidateDuration,
-            maximumCount: configuration.candidateConfiguration.maximumCandidateCount,
+            maximumCount: configuration.provisionalCandidateCount,
             maximumOverlapRatio: configuration.candidateConfiguration.maximumOverlapRatio
         )
         guard !candidates.isEmpty else { return .init(status: .noCandidates, candidates: []) }
@@ -69,17 +72,19 @@ enum AnthemStructuralAnalysisPipeline {
             configuration: configuration.compositeConfiguration
         )
 
-        let final = composite.compactMap { item -> AnthemStructuralAnalysisCandidate? in
-            guard let energy = energyEvidence.first(where: { $0.candidate == item.candidate }) else { return nil }
-            return .init(
-                candidate: item.candidate,
-                energyEvidence: energy,
-                structuralEvidence: item.structuralEvidence,
-                originalScore: item.originalScore,
-                structuralStrength: item.structuralStrength,
-                compositeScore: item.compositeScore
-            )
-        }
+        let final = composite
+            .prefix(configuration.candidateConfiguration.maximumCandidateCount)
+            .compactMap { item -> AnthemStructuralAnalysisCandidate? in
+                guard let energy = energyEvidence.first(where: { $0.candidate == item.candidate }) else { return nil }
+                return .init(
+                    candidate: item.candidate,
+                    energyEvidence: energy,
+                    structuralEvidence: item.structuralEvidence,
+                    originalScore: item.originalScore,
+                    structuralStrength: item.structuralStrength,
+                    compositeScore: item.compositeScore
+                )
+            }
 
         return .init(status: final.isEmpty ? .noCandidates : .analysed, candidates: final)
     }
