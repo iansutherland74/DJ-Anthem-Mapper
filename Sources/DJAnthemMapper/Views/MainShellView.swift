@@ -1,5 +1,6 @@
 import SwiftUI
 import AppKit
+import Dispatch
 import UniformTypeIdentifiers
 
 enum AnthemDestination: String, CaseIterable, Identifiable {
@@ -63,7 +64,8 @@ struct MainShellView: View {
                 isImporting: $isImporting,
                 importError: $importError,
                 selectedAudioStreamID: $selectedAudioStreamID,
-                playback: playback
+                playback: playback,
+                isWorkspaceActive: selection == .importMedia
             )
             .frame(maxWidth: .infinity, alignment: .top)
             .padding(.top, 16)
@@ -175,6 +177,7 @@ struct ImportWorkspace: View {
     @Binding var importError: String?
     @Binding var selectedAudioStreamID: Int?
     @ObservedObject var playback: PlaybackController
+    let isWorkspaceActive: Bool
     @State private var preparedMKVStreamID: Int?
     @State private var pendingMKVRestoreTime: TimeInterval?
     @State private var resumeMKVAfterSwitch = false
@@ -182,19 +185,22 @@ struct ImportWorkspace: View {
     @State private var waveformIsLoading = false
     @State private var waveformError: String?
     @State private var waveformGeneration = 0
+    @State private var importErrorPresentationGeneration = 0
 
     init(
         media: Binding<MediaDescription?>,
         isImporting: Binding<Bool>,
         importError: Binding<String?>,
         selectedAudioStreamID: Binding<Int?>,
-        playback: PlaybackController
+        playback: PlaybackController,
+        isWorkspaceActive: Bool
     ) {
         _media = media
         _isImporting = isImporting
         _importError = importError
         _selectedAudioStreamID = selectedAudioStreamID
         _playback = ObservedObject(wrappedValue: playback)
+        self.isWorkspaceActive = isWorkspaceActive
 
         let stateSource = AnthemMapLifecycleStateSource()
         lifecycleStateSource = stateSource
@@ -271,6 +277,7 @@ struct ImportWorkspace: View {
                     PrecisionSeekView(playback: playback, keyboardContext: keyboardContext)
 
                     EditorSpaceShortcutButton(context: keyboardContext, playback: playback)
+                        .disabled(!isWorkspaceActive)
                         .frame(width: 1, height: 1)
                         .frame(maxWidth: 760)
                         .padding(14)
@@ -589,6 +596,7 @@ struct ImportWorkspace: View {
     }
 
     private func startImport(_ url: URL) {
+        importErrorPresentationGeneration &+= 1
         isImporting = true
         importError = nil
 
@@ -623,8 +631,26 @@ struct ImportWorkspace: View {
                     streamID: selectedAudioStreamID
                 )
 
-            case .failed(let error):
-                importError = error.localizedDescription
+            case .failed:
+                let message = "The selected file could not be loaded as audio. The current track has been kept unchanged. Try another MP3, M4A, MP4, MKV or WAV file."
+                let presentationGeneration =
+                    importErrorPresentationGeneration
+
+                importError = message
+
+                DispatchQueue.main.asyncAfter(
+                    deadline: .now() + 8.0
+                ) {
+                    guard
+                        importErrorPresentationGeneration ==
+                            presentationGeneration,
+                        importError == message
+                    else {
+                        return
+                    }
+
+                    importError = nil
+                }
             }
         }
     }
