@@ -95,6 +95,7 @@ struct ImportWorkspace: View {
     @State private var isChangeTrackResolutionPresented = false
     private let openProtectionCoordinator = AnthemMapOpenProtectionCoordinator()
     @State private var isOpenResolutionPresented = false
+    @State private var isLifecycleSaveActionInProgress = false
     // M3_03H_OPEN_ANTHEM_MAP_UI_INTEGRATION
     @StateObject private var openCoordinator = AnthemMapOpenCoordinator()
     @State private var openStatusMessage: String?
@@ -102,6 +103,8 @@ struct ImportWorkspace: View {
     private let saveExecutor = AnthemMapSaveExecutor()
     private let openPanelPresenter = AnthemMapOpenPanelPresenter()
     private let loadedMediaIdentityBuilder = AnthemMapLoadedMediaIdentityBuilder()
+    private let lifecycleStateSource: AnthemMapLifecycleStateSource
+    @StateObject private var lifecycleBridge: AnthemMapLifecycleAppBridge
     @Binding var media: MediaDescription?
     @Binding var isImporting: Bool
     @Binding var importError: String?
@@ -115,6 +118,31 @@ struct ImportWorkspace: View {
     @State private var waveformError: String?
     @State private var waveformGeneration = 0
     private let importer = FFprobeMediaImporter()
+
+    init(
+        media: Binding<MediaDescription?>,
+        isImporting: Binding<Bool>,
+        importError: Binding<String?>,
+        selectedAudioStreamID: Binding<Int?>,
+        playback: PlaybackController
+    ) {
+        _media = media
+        _isImporting = isImporting
+        _importError = importError
+        _selectedAudioStreamID = selectedAudioStreamID
+        _playback = ObservedObject(wrappedValue: playback)
+
+        let stateSource = AnthemMapLifecycleStateSource()
+        lifecycleStateSource = stateSource
+
+        _lifecycleBridge = StateObject(
+            wrappedValue: AnthemMapLifecycleAppBridge(
+                stateProvider: stateSource.makeProvider(),
+                protectionCoordinator:
+                    AnthemMapLifecycleProtectionCoordinator()
+            )
+        )
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: AnthemSpacing.section) {
@@ -254,6 +282,49 @@ struct ImportWorkspace: View {
         } message: {
             Text("The current Anthem Map contains unsaved changes.")
         }
+        .background {
+            AnthemMapLifecycleWindowBridgeView(
+                bridge: lifecycleBridge
+            )
+            .frame(width: 0, height: 0)
+        }
+        .confirmationDialog(
+            "Save changes before closing DJ Anthem Mapper?",
+            isPresented: lifecycleResolutionBinding,
+            titleVisibility: .visible
+        ) {
+            Button("Save") {
+                isLifecycleSaveActionInProgress = true
+                Task { @MainActor in
+                    await Task.yield()
+                    lifecycleBridge.resolvePendingLifecycleAction(
+                        choice: .save
+                    )
+                    isLifecycleSaveActionInProgress = false
+                }
+            }
+            Button("Discard Changes", role: .destructive) {
+                lifecycleBridge.resolvePendingLifecycleAction(
+                    choice: .discard
+                )
+            }
+            Button("Cancel", role: .cancel) {
+                lifecycleBridge.resolvePendingLifecycleAction(
+                    choice: .cancel
+                )
+            }
+        } message: {
+            Text("The current Anthem Map contains unsaved changes.")
+        }
+        .onAppear {
+            configureLifecycleIntegration()
+        }
+        .onDisappear {
+            AnthemMapLifecycleRegistry.shared.uninstall(
+                lifecycleBridge
+            )
+            lifecycleStateSource.clear()
+        }
         .onChange(of: selectedAudioStreamID) { _, newStreamID in
             guard let media,
                   media.sourceURL.pathExtension.lowercased() == "mkv",
@@ -360,6 +431,50 @@ struct ImportWorkspace: View {
     private var hasUnsavedNewWorkspaceContent: Bool {
         let items = anthemRegion.collection.regions
         return !(items.count == 1 && items[0].region.isEmpty)
+    }
+
+    private var lifecycleResolutionBinding: Binding<Bool> {
+        Binding(
+            get: {
+                lifecycleBridge.isResolutionRequested
+            },
+            set: { isPresented in
+                if !isPresented,
+                   lifecycleBridge.isResolutionRequested,
+                   !isLifecycleSaveActionInProgress {
+                    lifecycleBridge.resolvePendingLifecycleAction(
+                        choice: .cancel
+                    )
+                }
+            }
+        )
+    }
+
+    private func configureLifecycleIntegration() {
+        lifecycleStateSource.configure(
+            session: {
+                anthemMapSession
+            },
+            currentSnapshot: {
+                anthemRegion.captureSnapshot()
+            },
+            hasUnsavedNewWorkspaceContent: {
+                hasUnsavedNewWorkspaceContent
+            },
+            mediaURL: {
+                media?.sourceURL
+            },
+            trackDuration: {
+                playback.duration
+            },
+            installReplacementSession: { replacementSession in
+                anthemMapSession = replacementSession
+            }
+        )
+
+        AnthemMapLifecycleRegistry.shared.install(
+            lifecycleBridge
+        )
     }
 
     private func requestProtectedChangeTrack(to replacementURL: URL) {
