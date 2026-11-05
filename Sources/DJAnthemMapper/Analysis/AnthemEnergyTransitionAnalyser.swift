@@ -1,6 +1,8 @@
 import Foundation
 
 struct AnthemEnergyTransitionEvidence: Equatable, Sendable {
+    let startTime: TimeInterval
+    let endTime: TimeInterval
     let riseStrength: Float
     let fallStrength: Float
     let sustainStrength: Float
@@ -26,7 +28,7 @@ enum AnthemEnergyTransitionAnalyser {
             let deviation = neighbours.reduce(Float(0)) { $0 + abs($1 - neighbourhoodMean) } / Float(neighbours.count)
             let sustain = clamp(neighbourhoodMean * (1 - deviation))
             let plateau = clamp(min(energy, min(previous, next)))
-            return .init(riseStrength: rise, fallStrength: fall, sustainStrength: sustain, localPeakStrength: localPeak, plateauStrength: plateau)
+            return .init(startTime: ordered[index].startTime, endTime: ordered[index].startTime + ordered[index].duration, riseStrength: rise, fallStrength: fall, sustainStrength: sustain, localPeakStrength: localPeak, plateauStrength: plateau)
         }
     }
 

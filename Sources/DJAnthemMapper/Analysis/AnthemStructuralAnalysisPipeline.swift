@@ -70,7 +70,7 @@ enum AnthemStructuralAnalysisPipeline {
         let transitions = AnthemEnergyTransitionAnalyser.analyse(frames: frames)
         let repetitions = AnthemRepetitionAnalyser.analyse(frames: frames, configuration: configuration.repetitionConfiguration)
         let structuralEvidence = candidates.compactMap {
-            AnthemStructuralEvidenceAnalyser.analyse(candidate: $0, frames: frames, transitions: transitions, repetitions: repetitions)
+            AnthemStructuralEvidenceAnalyser.analyse(candidate: $0, frames: frames, transitions: transitions, repetitions: repetitions, configuration: .init())
         }
         let composite = AnthemCompositeCandidateScorer.rank(
             candidates: candidates,

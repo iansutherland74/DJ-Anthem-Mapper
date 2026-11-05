@@ -13,14 +13,25 @@ struct AnthemStructuralEvidence: Equatable, Sendable {
     let structuralStrength: Float
 }
 
+struct AnthemStructuralEvidenceConfiguration: Equatable, Sendable {
+    var minimumRepetitionCoverageRatio: Double = 0.50
+    var isValid: Bool {
+        minimumRepetitionCoverageRatio.isFinite &&
+        minimumRepetitionCoverageRatio > 0 &&
+        minimumRepetitionCoverageRatio <= 1
+    }
+}
+
 enum AnthemStructuralEvidenceAnalyser {
     static func analyse(
         candidate: AnthemCandidate,
         frames: [AnthemAnalysisFrame],
         transitions: [AnthemEnergyTransitionEvidence],
-        repetitions: [AnthemRepetitionEvidence]
+        repetitions: [AnthemRepetitionEvidence],
+        configuration: AnthemStructuralEvidenceConfiguration = .init()
     ) -> AnthemStructuralEvidence? {
-        guard candidate.startTime.isFinite, candidate.endTime.isFinite,
+        guard configuration.isValid,
+              candidate.startTime.isFinite, candidate.endTime.isFinite,
               candidate.endTime > candidate.startTime else { return nil }
 
         let orderedFrames = frames.filter {
@@ -28,15 +39,9 @@ enum AnthemStructuralEvidenceAnalyser {
         }.sorted { $0.startTime < $1.startTime }
         guard !orderedFrames.isEmpty else { return nil }
 
-        let pairedCount = min(orderedFrames.count, transitions.count)
-        var applicableTransitions: [AnthemEnergyTransitionEvidence] = []
-        if pairedCount > 0 {
-            for index in 0..<pairedCount {
-                let frame = orderedFrames[index]
-                if frame.startTime < candidate.endTime && frame.startTime + frame.duration > candidate.startTime {
-                    applicableTransitions.append(transitions[index])
-                }
-            }
+        let applicableTransitions = transitions.filter { evidence in
+            evidence.startTime.isFinite && evidence.endTime.isFinite &&
+            evidence.startTime < candidate.endTime && evidence.endTime > candidate.startTime
         }
 
         let rise = applicableTransitions.map(\.riseStrength).max() ?? 0
@@ -45,9 +50,13 @@ enum AnthemStructuralEvidenceAnalyser {
         let sustain = mean(applicableTransitions.map(\.sustainStrength))
         let plateau = mean(applicableTransitions.map(\.plateauStrength))
 
-        let applicableRepetitions = repetitions.filter {
-            $0.sourceStartTime.isFinite && $0.sourceEndTime.isFinite &&
-            $0.sourceStartTime < candidate.endTime && $0.sourceEndTime > candidate.startTime
+        let applicableRepetitions = repetitions.filter { evidence in
+            guard evidence.sourceStartTime.isFinite, evidence.sourceEndTime.isFinite,
+                  evidence.sourceEndTime > evidence.sourceStartTime else { return false }
+            let overlap = max(0, min(candidate.endTime, evidence.sourceEndTime) - max(candidate.startTime, evidence.sourceStartTime))
+            let shorter = min(candidate.duration, evidence.sourceEndTime - evidence.sourceStartTime)
+            let coverage = shorter > 0 ? overlap / shorter : 0
+            return coverage >= configuration.minimumRepetitionCoverageRatio
         }.sorted {
             if $0.repetitionStrength != $1.repetitionStrength { return $0.repetitionStrength > $1.repetitionStrength }
             if $0.bestSimilarity != $1.bestSimilarity { return $0.bestSimilarity > $1.bestSimilarity }

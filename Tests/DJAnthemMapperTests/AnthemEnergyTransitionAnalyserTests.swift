@@ -35,7 +35,12 @@ final class AnthemEnergyTransitionAnalyserTests: XCTestCase {
 
     func testSilenceIsFiniteAndNeutral() {
         let result = evidence([0, 0, 0, 0])
-        XCTAssertTrue(result.allSatisfy { $0 == AnthemEnergyTransitionEvidence(riseStrength: 0, fallStrength: 0, sustainStrength: 0, localPeakStrength: 0, plateauStrength: 0) })
+        XCTAssertTrue(result.allSatisfy { evidence in
+            evidence.riseStrength == 0 && evidence.fallStrength == 0 &&
+            evidence.sustainStrength == 0 && evidence.localPeakStrength == 0 &&
+            evidence.plateauStrength == 0 &&
+            evidence.startTime.isFinite && evidence.endTime > evidence.startTime
+        })
     }
 
     func testEmptyInputReturnsEmptyOutput() {
