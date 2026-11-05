@@ -15,7 +15,8 @@ enum AnthemCandidateScorer {
         from frames: [AnthemAnalysisFrame],
         preferredDuration: TimeInterval = 20,
         maximumCount: Int = 5,
-        maximumOverlapRatio: Double = 0.50
+        maximumOverlapRatio: Double = 0.50,
+        minimumCoverageRatio: Double = 0
     ) -> [AnthemCandidate] {
         guard
             !frames.isEmpty,
@@ -23,7 +24,10 @@ enum AnthemCandidateScorer {
             maximumCount > 0,
             maximumOverlapRatio.isFinite,
             maximumOverlapRatio >= 0,
-            maximumOverlapRatio <= 1
+            maximumOverlapRatio <= 1,
+            minimumCoverageRatio.isFinite,
+            minimumCoverageRatio >= 0,
+            minimumCoverageRatio <= 1
         else {
             return []
         }
@@ -52,6 +56,9 @@ enum AnthemCandidateScorer {
             let availableEnd = orderedFrames.map { $0.startTime + $0.duration }.max() ?? startTime
             let endTime = min(targetEnd, availableEnd)
             let range = AnthemAnalysisTimeRange(startTime: startTime, endTime: endTime)
+            let requiredDuration = min(preferredDuration, availableEnd)
+            let coverageRatio = requiredDuration > 0 ? range.duration / requiredDuration : 0
+            guard coverageRatio >= minimumCoverageRatio else { continue }
             guard let measurement = AnthemAnalysisMeasurements.weightedEnergy(in: range, frames: orderedFrames) else { continue }
             candidates.append(
                 AnthemCandidate(

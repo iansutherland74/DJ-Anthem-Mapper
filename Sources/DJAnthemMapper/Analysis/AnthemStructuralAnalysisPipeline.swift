@@ -54,7 +54,8 @@ enum AnthemStructuralAnalysisPipeline {
             from: frames,
             preferredDuration: configuration.candidateConfiguration.preferredCandidateDuration,
             maximumCount: configuration.provisionalCandidateCount,
-            maximumOverlapRatio: configuration.candidateConfiguration.maximumOverlapRatio
+            maximumOverlapRatio: configuration.candidateConfiguration.maximumOverlapRatio,
+            minimumCoverageRatio: configuration.candidateConfiguration.minimumCandidateCoverageRatio
         )
         guard !candidates.isEmpty else { return .init(status: .noCandidates, candidates: []) }
 

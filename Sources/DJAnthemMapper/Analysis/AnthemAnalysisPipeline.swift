@@ -4,12 +4,16 @@ struct AnthemAnalysisConfiguration: Equatable, Sendable {
     var preferredCandidateDuration: TimeInterval = 20
     var maximumCandidateCount: Int = 5
     var maximumOverlapRatio: Double = 0.50
+    var minimumCandidateCoverageRatio: Double = 0.75
 
     var isValid: Bool {
         preferredCandidateDuration.isFinite && preferredCandidateDuration > 0 &&
         maximumCandidateCount > 0 &&
         maximumOverlapRatio.isFinite &&
-        (0...1).contains(maximumOverlapRatio)
+        (0...1).contains(maximumOverlapRatio) &&
+        minimumCandidateCoverageRatio.isFinite &&
+        minimumCandidateCoverageRatio > 0 &&
+        minimumCandidateCoverageRatio <= 1
     }
 }
 
@@ -53,7 +57,8 @@ enum AnthemAnalysisPipeline {
             from: frames,
             preferredDuration: configuration.preferredCandidateDuration,
             maximumCount: configuration.maximumCandidateCount,
-            maximumOverlapRatio: configuration.maximumOverlapRatio
+            maximumOverlapRatio: configuration.maximumOverlapRatio,
+            minimumCoverageRatio: configuration.minimumCandidateCoverageRatio
         )
 
         let analysed = candidates.compactMap { candidate -> AnalysedAnthemCandidate? in
