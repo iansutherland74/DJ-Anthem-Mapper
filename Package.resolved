@@ -1,0 +1,15 @@
+{
+  "originHash" : "44734127f9f312b0c8a7e46dec08b7004a0d14f97b39f2803049100e26c12d77",
+  "pins" : [
+    {
+      "identity" : "demucs-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ondeinference/demucs-swift",
+      "state" : {
+        "revision" : "326ca71a2297bb9f20da56c67bd1d0701b6a3235",
+        "version" : "0.1.0"
+      }
+    }
+  ],
+  "version" : 3
+}
